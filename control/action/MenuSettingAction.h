@@ -1,0 +1,14 @@
+//
+// Created by ASUS on 2023/10/4.
+//
+
+#ifndef FETCHTEXTURE_MENUSETTINGACTION_H
+#define FETCHTEXTURE_MENUSETTINGACTION_H
+
+
+class MenuSettingAction {
+
+};
+
+
+#endif //FETCHTEXTURE_MENUSETTINGACTION_H

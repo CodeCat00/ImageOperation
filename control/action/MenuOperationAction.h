@@ -1,0 +1,14 @@
+//
+// Created by ASUS on 2023/10/4.
+//
+
+#ifndef FETCHTEXTURE_MENUOPERATIONACTION_H
+#define FETCHTEXTURE_MENUOPERATIONACTION_H
+
+
+class MenuOperationAction {
+
+};
+
+
+#endif //FETCHTEXTURE_MENUOPERATIONACTION_H

@@ -1,0 +1,4 @@
+C:/Users/ASUS/CLionProjects/ImageOperation/cmake-build-debug/CMakeFiles/ImageOperation.dir
+C:/Users/ASUS/CLionProjects/ImageOperation/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/ASUS/CLionProjects/ImageOperation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/ASUS/CLionProjects/ImageOperation/cmake-build-debug/CMakeFiles/ImageOperation_autogen.dir

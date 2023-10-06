@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainUi</class>
+ <widget class="QMainWindow" name="MainUi">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>748</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>ImageOperation</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/***********Menu**************/
+QMenu {
+	border-image:url(D:/workspace/C/clothTexture/clothTexture/config/qss/style/images/5.png);
+	border:1px solid gray;
+	border-radius:3px;
+	min-width:60px;
+}
+
+QMenu::item {   
+    min-width:60px;
+    height:25px;
+    padding: 2px 25px 2px 30px;
+    margin-left: 5px;
+    /* color:#858E94; */
+    color:black
+ }
+
+QMenu::item:selected {  
+    border-width:1px;
+    border-color: #516589;
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                             stop: 0
+                             rgb(45,133,207),
+                             stop: 1.0 rgb(125,195,250));
+    color:#E6FFFF;
+}
+QMenu::item:disabled {   
+    color:gray;
+}
+
+/***********QWidget**************/
+QWidget
+{
+	background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #D8D9DE,stop:1 #C8C8D0);
+}
+
+/***********QScrollBar**************/
+QScrollBar:horizontal {
+    border: 1px solid #222222;
+    background: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0.0 #ffffff, stop: 0.5 #ffffff, stop: 1 #ffffff);
+    height: 7px;
+    margin: 0px 16px 0 16px;
+}
+ 
+QScrollBar::handle:horizontal
+{
+    background: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #b1b1b1, stop: 0.5 #b3b3b3, stop: 1 #b1b1b1);
+    min-height: 20px;
+    border-radius: 2px;
+}
+ 
+QScrollBar::add-line:horizontal {
+    border: 1px solid #1b1b19;
+    border-radius: 2px;
+    background: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #999999, stop: 1 #999999);
+    width: 14px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+ 
+QScrollBar::sub-line:horizontal {
+    border: 1px solid #1b1b19;
+    border-radius: 2px;
+    background: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #999999, stop: 1 #999999);
+    width: 14px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+ 
+QScrollBar::right-arrow:horizontal, QScrollBar::left-arrow:horizontal
+{
+    border: 1px solid black;
+    width: 1px;
+    height: 1px;
+    background: white;
+}
+ 
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
+{
+    background: none;
+}
+ 
+QScrollBar:vertical
+{
+    background: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0, stop: 0.0 #ffffff, stop: 0.5 #ffffff, stop: 1 #ffffff);
+    width: 7px;
+    margin: 16px 0 16px 0;
+    border: 1px solid #222222;
+}
+ 
+QScrollBar::handle:vertical
+{
+    background: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #b1b1b1, stop: 0.5 #b3b3b3, stop: 1 #b1b1b1);
+    min-height: 20px;
+    border-radius: 2px;
+}
+ 
+QScrollBar::add-line:vertical
+{
+    border: 1px solid #1b1b19;
+    border-radius: 2px;
+    background: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #999999, stop: 1 #999999);
+    height: 14px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+ 
+QScrollBar::sub-line:vertical
+{
+    border: 1px solid #1b1b19;
+    border-radius: 2px;
+    background: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #999999, stop: 1 #999999);
+    height: 14px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+ 
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical
+{
+    border: 1px solid black;
+    width: 1px;
+    height: 1px;
+    background: white;
+}
+ 
+ 
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical
+{
+    background: none;
+}
+
+/***********QTabWidget**************/
+QTabBar::tab {
+    color: #ffffff;
+    border: 1px solid #444;
+    border-bottom-style: none;
+    background-color: #999999;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    margin-right: -1px;
+}
+
+ 
+QTabWidget::pane {
+    border: 1px solid #444;
+    top: 1px;
+}
+ 
+QTabBar::tab:last
+{
+    margin-right: 0; 
+    border-top-right-radius: 3px;
+}
+ 
+QTabBar::tab:first:!selected
+{
+    margin-left: 0px; 
+    border-top-left-radius: 3px;
+}
+ 
+QTabBar::tab:!selected
+{
+    border-bottom-style: solid;
+    margin-top: 3px;
+    background-color: QLinearGradient(x1:0, y1:0, x2:0, y2:1, stop:1 #212121, stop:.4 #737373);
+}
+ 
+QTabBar::tab:selected
+{
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    margin-bottom: 0px;
+}
+ 
+QTabBar::tab:!selected:hover
+{
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: QLinearGradient(x1:0, y1:0, x2:0, y2:1, stop:1 #212121, stop:0.4 #737373, stop:0.2 #999999, stop:0.1 #b1b1b1);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhNone</set>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <item>
+     <layout class="QVBoxLayout" name="openImageVerticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="openImageButtonHorizontalLayout">
+        <item>
+         <widget class="QPushButton" name="preImageButton">
+          <property name="text">
+           <string>上一张</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="openImageHorizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="nextImageButton">
+          <property name="text">
+           <string>下一张</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QScrollArea" name="openImageFileScroll">
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+        <widget class="QWidget" name="openImageFileScrollWidget">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>496</width>
+           <height>635</height>
+          </rect>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="openImageFileLabel">
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="unitTextureTab">
+       <attribute name="title">
+        <string>Tab1</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QScrollArea" name="unitTextureScroll">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="unitTextureWidget">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>478</width>
+             <height>625</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="QLabel" name="unitTextureLabel">
+              <property name="text">
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="stitchTextureTab">
+       <attribute name="title">
+        <string>Tab2</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QScrollArea" name="stitchTextureScroll">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="stitchTextureScrollWid">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>478</width>
+             <height>625</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QLabel" name="stitchTextureLabel">
+              <property name="text">
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="fileMenu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="openAct"/>
+    <addaction name="saveAct"/>
+    <addaction name="setOpenFilePathAct"/>
+    <addaction name="setSaveFilePathAct"/>
+    <addaction name="exitAct"/>
+   </widget>
+   <widget class="QMenu" name="editMenu">
+    <property name="title">
+     <string>操作</string>
+    </property>
+    <addaction name="shotAct"/>
+    <addaction name="fourPointShotAct"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>设置</string>
+    </property>
+    <widget class="QMenu" name="shotImageSize">
+     <property name="title">
+      <string>纹理单元尺寸</string>
+     </property>
+     <addaction name="smallShotImageSizeAct"/>
+     <addaction name="midShotImageSizeAct"/>
+     <addaction name="bigShotImageSizeAct"/>
+     <addaction name="autoShotImageSizeAct"/>
+    </widget>
+    <addaction name="shotImageSize"/>
+   </widget>
+   <addaction name="fileMenu"/>
+   <addaction name="editMenu"/>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="openAct">
+   <property name="text">
+    <string>打开图片</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="saveAct">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="printAct">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>打印</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="exitAct">
+   <property name="text">
+    <string>退出</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="shotAct">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>截图</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="aboutAct">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="aboutQtAct">
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+  </action>
+  <action name="smallShotImageSizeAct">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>256*256</string>
+   </property>
+  </action>
+  <action name="midShotImageSizeAct">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>512*512</string>
+   </property>
+  </action>
+  <action name="bigShotImageSizeAct">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>1024*1024</string>
+   </property>
+  </action>
+  <action name="autoShotImageSizeAct">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>自动</string>
+   </property>
+  </action>
+  <action name="setOpenFilePathAct">
+   <property name="text">
+    <string>设置读取文件夹</string>
+   </property>
+  </action>
+  <action name="setSaveFilePathAct">
+   <property name="text">
+    <string>设置保存文件夹</string>
+   </property>
+  </action>
+  <action name="nextImageAct">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>下一张</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="preImageAct">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>前一张</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="personServerSetAct">
+   <property name="text">
+    <string>个人服务器</string>
+   </property>
+  </action>
+  <action name="merchantServerSetAct">
+   <property name="text">
+    <string>面料商服务器</string>
+   </property>
+  </action>
+  <action name="autoPutDateToPersonServerAct">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>自动上传至个人服务器</string>
+   </property>
+  </action>
+  <action name="autoPutDateToMerchantServerAct">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>自动上传至面料商服务器</string>
+   </property>
+  </action>
+  <action name="putSingleFileAct">
+   <property name="text">
+    <string>单文件上传</string>
+   </property>
+  </action>
+  <action name="putBatchFileAct">
+   <property name="text">
+    <string>批量上传</string>
+   </property>
+  </action>
+  <action name="jiaoZhengAct">
+   <property name="text">
+    <string>倾斜矫正</string>
+   </property>
+  </action>
+  <action name="actSize3">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>3</string>
+   </property>
+  </action>
+  <action name="actSize4">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>4</string>
+   </property>
+  </action>
+  <action name="actSize5">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>5</string>
+   </property>
+  </action>
+  <action name="actSize6">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>6</string>
+   </property>
+  </action>
+  <action name="actSize7">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>7</string>
+   </property>
+  </action>
+  <action name="actSize8">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>8</string>
+   </property>
+  </action>
+  <action name="recentOpenFilePath_1">
+   <property name="text">
+    <string>recentFileActions_1</string>
+   </property>
+  </action>
+  <action name="recentOpenFilePath_2">
+   <property name="text">
+    <string>recentFileActions_2</string>
+   </property>
+  </action>
+  <action name="recentOpenFilePath_3">
+   <property name="text">
+    <string>recentFileActions_3</string>
+   </property>
+  </action>
+  <action name="OneCmAct">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>设置1cm距离</string>
+   </property>
+  </action>
+  <action name="postAct">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>上传</string>
+   </property>
+  </action>
+  <action name="rectAct">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>识别矩形</string>
+   </property>
+  </action>
+  <action name="act2x2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>2x2</string>
+   </property>
+  </action>
+  <action name="act3x3">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>3x3</string>
+   </property>
+  </action>
+  <action name="actLog">
+   <property name="text">
+    <string>登录</string>
+   </property>
+  </action>
+  <action name="actCompress">
+   <property name="text">
+    <string>压缩</string>
+   </property>
+  </action>
+  <action name="fourPointShotAct">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>四点截图</string>
+   </property>
+  </action>
+  <action name="pureColor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>纯色</string>
+   </property>
+  </action>
+  <action name="cell">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>网格</string>
+   </property>
+  </action>
+  <action name="stripe">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>条纹</string>
+   </property>
+  </action>
+  <action name="action2x2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>2x2</string>
+   </property>
+  </action>
+  <action name="action3x3">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>3x3</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../qrc/MainUi.qrc"/>
+ </resources>
+ <connections/>
+</ui>

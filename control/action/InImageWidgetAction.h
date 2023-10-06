@@ -1,0 +1,14 @@
+//
+// Created by ASUS on 2023/10/4.
+//
+
+#ifndef FETCHTEXTURE_INIMAGEWIDGETACTION_H
+#define FETCHTEXTURE_INIMAGEWIDGETACTION_H
+
+
+class InImageWidgetAction {
+
+};
+
+
+#endif //FETCHTEXTURE_INIMAGEWIDGETACTION_H
