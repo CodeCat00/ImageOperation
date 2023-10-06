@@ -47,5 +47,5 @@ QPixmap ImageModel::getShowImage() const {
 }
 
 QImage ImageModel::getSaveImage() const {
-    return inImage;
+    return unitTexture;
 }
