@@ -6,6 +6,10 @@
 #include "MainWindow.h"
 
 #include "../../control/image/ImageProcess.h"
+#include "../../control/image/GrayscaleTransformation.h"
+#include "../../control/image/ImageSegmentation.h"
+#include "../../control/image/Morphology.h"
+#include "../../control/image/ColorImageProcessing.h"
 
 /* ---------------------------------------- 初始化部分 --------------------------------------------------------------- */
 
@@ -26,14 +30,12 @@ void MainWindow::initSlot() {
 
 
     // 菜单栏 -> 操作
-    connect(mainUi.shotAct, &QAction::triggered, this, &MainWindow::screenShot);
-    connect(mainUi.fourPointShotAct, &QAction::triggered, this, &MainWindow::screenShotByFourPoint);
+    connect(mainUi.imageInversionAct, &QAction::triggered, this, &MainWindow::imageInversionAct);
+    connect(mainUi.outlierDetectionAct, &QAction::triggered, this, &MainWindow::outlierDetection);
+    connect(mainUi.binaryImageAct, &QAction::triggered, this, &MainWindow::binaryImage);
+    connect(mainUi.grayscaleProcessingAct, &QAction::triggered, this, &MainWindow::grayscaleProcessing);
 
     // 菜单栏 -> 设置
-    connect(mainUi.smallShotImageSizeAct, &QAction::triggered, this, &MainWindow::setUnitTextureSizeFor256);
-    connect(mainUi.midShotImageSizeAct, &QAction::triggered, this, &MainWindow::setUnitTextureSizeFor512);
-    connect(mainUi.bigShotImageSizeAct, &QAction::triggered, this, &MainWindow::setUnitTextureSizeFor1024);
-    connect(mainUi.autoShotImageSizeAct, &QAction::triggered, this, &MainWindow::setUnitTextureSizeForAuto);
 
     // 输入图片窗口
     connect(mainUi.preImageButton, &QPushButton::clicked, this, &MainWindow::preImage);
@@ -56,7 +58,7 @@ void MainWindow::open() {
 }
 
 void MainWindow::save() {
-    QString fileName = MenuFileAction::save(imageModel.getSaveImage(), &filePathRecord);
+    QString fileName = MenuFileAction::save(imageModel.saveImage, &filePathRecord);
     if (fileName.isEmpty()) {
         return;
     }
@@ -79,17 +81,7 @@ void MainWindow::setSaveFilePath() {
     MenuFileAction::setSaveFilePath(&filePathRecord);
 }
 
-void MainWindow::screenShot() {}
-
-void MainWindow::screenShotByFourPoint() {}
-
-void MainWindow::setUnitTextureSizeFor256() {}
-
-void MainWindow::setUnitTextureSizeFor512() {}
-
-void MainWindow::setUnitTextureSizeFor1024() {}
-
-void MainWindow::setUnitTextureSizeForAuto() {}
+/* ----------------------------------- 前后页按钮和滚轮 ---------------------------------------------------------------- */
 
 void MainWindow::preImage() {
     QString fileName = filePathRecord.getPreFileName();
@@ -115,7 +107,7 @@ void MainWindow::nextImage() {
 
 void MainWindow::wheelEvent(QWheelEvent *event) {
     if (QApplication::keyboardModifiers() == Qt::ControlModifier) {
-        if (mainUi.openImageFileScroll->underMouse()) {
+        if (mainUi.openImageFileLabel->underMouse()) {
             if (event->delta() > 0) {
                 ImageProcess::getBiggerImage(&imageModel.inImage, &imageModel.showImage);
             } else {
@@ -124,11 +116,11 @@ void MainWindow::wheelEvent(QWheelEvent *event) {
             mainUi.openImageFileLabel->setPixmap(imageModel.getShowImage());
         }
 
-        if (mainUi.stitchTextureScroll->underMouse()) {
+        if (mainUi.tabLabel1->underMouse()) {
             if (event->delta() > 0) {
-                ImageProcess::getBiggerImage(&imageModel.inImage, &imageModel.unitTexture);
+                ImageProcess::getBiggerImage(&imageModel.inImage, &imageModel.showImage);
             } else {
-                ImageProcess::getSmallerShowImage(&imageModel.inImage, &imageModel.unitTexture);
+                ImageProcess::getSmallerShowImage(&imageModel.inImage, &imageModel.showImage);
             }
             mainUi.openImageFileLabel->setPixmap(imageModel.getShowImage());
         }
@@ -136,4 +128,46 @@ void MainWindow::wheelEvent(QWheelEvent *event) {
     } else {
         QMainWindow::wheelEvent(event);
     }
+}
+
+/* ----------------------------------- 图像示例程序 ------------------------------------------------------------------- */
+
+void MainWindow::imageInversionAct() {
+    GrayscaleTransformation::imageInversion(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getResultImage());
+}
+
+void MainWindow::outlierDetection() {
+    ImageSegmentation::outlierDetection(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getResultImage());
+}
+
+void MainWindow::binaryImage() {
+    Morphology::binaryImage(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getResultImage());
+}
+
+void MainWindow::grayscaleProcessing() {
+    ColorImageProcessing::grayscaleProcessing(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getResultImage());
 }

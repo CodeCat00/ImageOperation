@@ -19,7 +19,6 @@
 #include "../source/ui/ui_MainUi.h"
 #include "../../control/record/FilePathRecord.h"
 
-
 class MainWindow : public QMainWindow {
 
 Q_OBJECT
@@ -57,18 +56,12 @@ private slots:
     void setSaveFilePath();
 
     // 菜单栏 -> 操作
-    void screenShot();
-
-    void screenShotByFourPoint();
+    void imageInversionAct();
+    void outlierDetection();
+    void binaryImage();
+    void grayscaleProcessing();
 
     // 菜单栏 -> 设置
-    void setUnitTextureSizeFor256();
-
-    void setUnitTextureSizeFor512();
-
-    void setUnitTextureSizeFor1024();
-
-    void setUnitTextureSizeForAuto();
 
     // 输入图片窗口
     void preImage();

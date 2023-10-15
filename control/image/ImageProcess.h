@@ -6,6 +6,7 @@
 #define IMAGEOPERATION_IMAGEPROCESS_H
 
 #include <QImage>
+#include "../../model/ImageModel.h"
 
 class ImageProcess {
 
@@ -13,7 +14,6 @@ public:
     static void getBiggerImage(QImage *srcImage, QImage *changeImage);
 
     static void getSmallerShowImage(QImage *srcImage, QImage *changeImage);
-
 
 private:
     static void changeImageSize(QImage *srcImage, QImage *changeImage,double scale);

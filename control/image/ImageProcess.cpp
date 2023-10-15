@@ -21,7 +21,7 @@ void ImageProcess::changeImageSize(QImage *srcImage, QImage *changeImage, double
     int height = (*changeImage).height() * scale;
     double multi = (double) height / width;
 
-    width = width <= 512 ? 512 : width;
+    width = width <= 256 ? 256 : width;
     width = width >= 4096 ? 4096 : width;
 
     cv::Mat srcMat = ImageFormatConverter::QImageToMat(*srcImage);

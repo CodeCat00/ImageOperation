@@ -9,6 +9,9 @@
 
 cv::Mat ImageFormatConverter::QImageToMat(const QImage& image)
 {
+
+    return {image.height(), image.width(), CV_8UC3, (void*)image.constBits(), static_cast<size_t>(image.bytesPerLine())};
+
     cv::Mat mat;
     switch (image.format())
     {
@@ -27,6 +30,7 @@ cv::Mat ImageFormatConverter::QImageToMat(const QImage& image)
         default:
             break;
     }
+
     return mat;
 }
 

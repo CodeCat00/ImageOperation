@@ -279,7 +279,7 @@ QTabBar::tab:!selected:hover
            <x>0</x>
            <y>0</y>
            <width>496</width>
-           <height>635</height>
+           <height>641</height>
           </rect>
          </property>
          <property name="layoutDirection">
@@ -308,30 +308,30 @@ QTabBar::tab:!selected:hover
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
-      <widget class="QWidget" name="unitTextureTab">
+      <widget class="QWidget" name="tabWidget1">
        <attribute name="title">
         <string>Tab1</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QScrollArea" name="unitTextureScroll">
+         <widget class="QScrollArea" name="tabScrollArea1">
           <property name="widgetResizable">
            <bool>true</bool>
           </property>
-          <widget class="QWidget" name="unitTextureWidget">
+          <widget class="QWidget" name="tabInnerWidget1">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
              <width>478</width>
-             <height>625</height>
+             <height>631</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout">
             <item>
-             <widget class="QLabel" name="unitTextureLabel">
+             <widget class="QLabel" name="tabLabel1">
               <property name="text">
                <string/>
               </property>
@@ -346,23 +346,23 @@ QTabBar::tab:!selected:hover
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="stitchTextureTab">
+      <widget class="QWidget" name="tabWidget2">
        <attribute name="title">
         <string>Tab2</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QScrollArea" name="stitchTextureScroll">
+         <widget class="QScrollArea" name="tabScrollArea2">
           <property name="widgetResizable">
            <bool>true</bool>
           </property>
-          <widget class="QWidget" name="stitchTextureScrollWid">
+          <widget class="QWidget" name="tabInnerWidget2">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
              <width>478</width>
-             <height>625</height>
+             <height>631</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -392,7 +392,7 @@ QTabBar::tab:!selected:hover
      <x>0</x>
      <y>0</y>
      <width>1024</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="fileMenu">
@@ -405,30 +405,68 @@ QTabBar::tab:!selected:hover
     <addaction name="setSaveFilePathAct"/>
     <addaction name="exitAct"/>
    </widget>
-   <widget class="QMenu" name="editMenu">
+   <widget class="QMenu" name="exampleMenu">
     <property name="title">
-     <string>操作</string>
+     <string>示例</string>
     </property>
-    <addaction name="shotAct"/>
-    <addaction name="fourPointShotAct"/>
+    <widget class="QMenu" name="grayscaleTransformation">
+     <property name="title">
+      <string>灰度变换</string>
+     </property>
+     <addaction name="imageInversionAct"/>
+    </widget>
+    <widget class="QMenu" name="frequencyDomainFiltering">
+     <property name="title">
+      <string>频率域滤波</string>
+     </property>
+     <addaction name="fourierTransformSpectrogramAct"/>
+    </widget>
+    <widget class="QMenu" name="restorationAndReconstruction">
+     <property name="title">
+      <string>复原与重建</string>
+     </property>
+     <addaction name="gaussianNoiseAct"/>
+    </widget>
+    <widget class="QMenu" name="colorProcessing">
+     <property name="title">
+      <string>彩色处理</string>
+     </property>
+     <addaction name="grayscaleProcessingAct"/>
+    </widget>
+    <widget class="QMenu" name="multiResolutionProcessing">
+     <property name="title">
+      <string>小波和多分辨率处理</string>
+     </property>
+     <addaction name="imagePyramidAct"/>
+    </widget>
+    <widget class="QMenu" name="morphology">
+     <property name="title">
+      <string>形态学</string>
+     </property>
+     <addaction name="binaryImageAct"/>
+    </widget>
+    <widget class="QMenu" name="imageSegmentation">
+     <property name="title">
+      <string>图像分割</string>
+     </property>
+     <addaction name="outlierDetectionAct"/>
+    </widget>
+    <addaction name="grayscaleTransformation"/>
+    <addaction name="frequencyDomainFiltering"/>
+    <addaction name="restorationAndReconstruction"/>
+    <addaction name="colorProcessing"/>
+    <addaction name="multiResolutionProcessing"/>
+    <addaction name="morphology"/>
+    <addaction name="imageSegmentation"/>
    </widget>
    <widget class="QMenu" name="menu">
     <property name="title">
      <string>设置</string>
     </property>
-    <widget class="QMenu" name="shotImageSize">
-     <property name="title">
-      <string>纹理单元尺寸</string>
-     </property>
-     <addaction name="smallShotImageSizeAct"/>
-     <addaction name="midShotImageSizeAct"/>
-     <addaction name="bigShotImageSizeAct"/>
-     <addaction name="autoShotImageSizeAct"/>
-    </widget>
-    <addaction name="shotImageSize"/>
+    <addaction name="action1"/>
    </widget>
    <addaction name="fileMenu"/>
-   <addaction name="editMenu"/>
+   <addaction name="exampleMenu"/>
    <addaction name="menu"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
@@ -781,6 +819,56 @@ QTabBar::tab:!selected:hover
    </property>
    <property name="text">
     <string>3x3</string>
+   </property>
+  </action>
+  <action name="gray">
+   <property name="text">
+    <string>huidu</string>
+   </property>
+  </action>
+  <action name="actiongray">
+   <property name="text">
+    <string>gray</string>
+   </property>
+  </action>
+  <action name="imageInversionAct">
+   <property name="text">
+    <string>图像反转</string>
+   </property>
+  </action>
+  <action name="fourierTransformSpectrogramAct">
+   <property name="text">
+    <string>傅里叶变换频谱图</string>
+   </property>
+  </action>
+  <action name="gaussianNoiseAct">
+   <property name="text">
+    <string>高斯噪声</string>
+   </property>
+  </action>
+  <action name="grayscaleProcessingAct">
+   <property name="text">
+    <string>灰度处理 </string>
+   </property>
+  </action>
+  <action name="imagePyramidAct">
+   <property name="text">
+    <string>图像金字塔</string>
+   </property>
+  </action>
+  <action name="binaryImageAct">
+   <property name="text">
+    <string>二值图像</string>
+   </property>
+  </action>
+  <action name="outlierDetectionAct">
+   <property name="text">
+    <string>孤立点检测</string>
+   </property>
+  </action>
+  <action name="action1">
+   <property name="text">
+    <string>空</string>
    </property>
   </action>
  </widget>

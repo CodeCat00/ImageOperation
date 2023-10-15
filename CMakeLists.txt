@@ -44,6 +44,20 @@ add_executable(ImageOperation main.cpp
         model/ImageModel.cpp
         control/image/ImageProcess.cpp
         control/image/ImageProcess.h
+        control/image/GrayscaleTransformation.cpp
+        control/image/GrayscaleTransformation.h
+        control/image/ImageSegmentation.cpp
+        control/image/ImageSegmentation.h
+        control/image/Morphology.cpp
+        control/image/Morphology.h
+        control/image/WaveletAndMultiResolutionProcessing.cpp
+        control/image/WaveletAndMultiResolutionProcessing.h
+        control/image/ColorImageProcessing.cpp
+        control/image/ColorImageProcessing.h
+        control/image/RestorationAndReconstruction.cpp
+        control/image/RestorationAndReconstruction.h
+        control/image/FrequencyDomainFiltering.cpp
+        control/image/FrequencyDomainFiltering.h
 )
 
 target_link_libraries(ImageOperation ${OpenCV_LIBS})
