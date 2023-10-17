@@ -120,9 +120,51 @@
 			null
 		],
 		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/ColorImageProcessing.h",
+			"MU",
+			"3RHPYIGTL7/moc_ColorImageProcessing.cpp",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/FrequencyDomainFiltering.h",
+			"MU",
+			"3RHPYIGTL7/moc_FrequencyDomainFiltering.cpp",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/GrayscaleTransformation.h",
+			"MU",
+			"3RHPYIGTL7/moc_GrayscaleTransformation.cpp",
+			null
+		],
+		[
 			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/ImageProcess.h",
 			"MU",
 			"3RHPYIGTL7/moc_ImageProcess.cpp",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/ImageSegmentation.h",
+			"MU",
+			"3RHPYIGTL7/moc_ImageSegmentation.cpp",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/Morphology.h",
+			"MU",
+			"3RHPYIGTL7/moc_Morphology.cpp",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/RestorationAndReconstruction.h",
+			"MU",
+			"3RHPYIGTL7/moc_RestorationAndReconstruction.cpp",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/WaveletAndMultiResolutionProcessing.h",
+			"MU",
+			"3RHPYIGTL7/moc_WaveletAndMultiResolutionProcessing.cpp",
 			null
 		],
 		[
@@ -225,7 +267,42 @@
 			null
 		],
 		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/ColorImageProcessing.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/FrequencyDomainFiltering.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/GrayscaleTransformation.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/ImageProcess.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/ImageSegmentation.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/Morphology.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/RestorationAndReconstruction.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/WaveletAndMultiResolutionProcessing.cpp",
 			"MU",
 			null
 		],

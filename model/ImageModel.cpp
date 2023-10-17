@@ -7,6 +7,7 @@
 #include <opencv2/core/mat.hpp>
 #include "ImageModel.h"
 #include "../control/util/ImageFormatConverter.h"
+#include "../control/image/ImageProcess.h"
 
 void ImageModel::readImage(QString fileName) {
 
@@ -26,26 +27,27 @@ void ImageModel::readImage(QString fileName) {
     }
 
     inImage.loadFromData(reinterpret_cast<unsigned char *>(m_pBuff), m_nBuffSize);
-    if (inImage.width() < 1024) {
-        showImage = inImage;
-        return;
+    showInImage = inImage;
+
+    ImageProcess::changeImageSize(&inImage, &showInImage, 128, 1024, 1.0);
+
+}
+
+QPixmap ImageModel::getShowInImage() const {
+    return QPixmap::fromImage(showInImage);
+}
+
+QPixmap ImageModel::getShowResultImage() {
+    if (showResultImage.isNull()) {
+        showResultImage = resultImage;
     }
 
-    cv::Mat inImageMat = ImageFormatConverter::QImageToMat(inImage);
-    cv::Mat resizeImage;
-
-    double scale = 1024. / inImage.width();
-    int width = inImage.width() * scale;
-    int height = inImage.height() * scale;
-    resize(inImageMat, resizeImage, cv::Size(width, height));
-
-    showImage = ImageFormatConverter::MatToQImage(resizeImage);
+    return QPixmap::fromImage(showResultImage);
 }
 
-QPixmap ImageModel::getShowImage() const {
-    return QPixmap::fromImage(showImage);
-}
+void ImageModel::setResultImage(QImage image) {
+    resultImage = image;
+    showResultImage = image;
 
-QPixmap ImageModel::getResultImage() const {
-    return QPixmap::fromImage(resultImage);
+    ImageProcess::changeImageSize(&resultImage, &showResultImage, 128, 1024, 1.0);
 }

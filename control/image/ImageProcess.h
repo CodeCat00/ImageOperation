@@ -15,8 +15,7 @@ public:
 
     static void getSmallerShowImage(QImage *srcImage, QImage *changeImage);
 
-private:
-    static void changeImageSize(QImage *srcImage, QImage *changeImage,double scale);
+    static void changeImageSize(QImage *srcImage, QImage *changeImage, int minWidth, int maxWidth, double scale);
 
 };
 

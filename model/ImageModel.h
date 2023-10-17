@@ -13,13 +13,16 @@ class ImageModel {
 public:
     void readImage(QString fileName);
 
-    QPixmap getShowImage() const;
-    QPixmap getResultImage() const;
+    void setResultImage(QImage image);
+
+    QPixmap getShowInImage() const;
+    QPixmap getShowResultImage();
 
 public:
     QImage inImage;
-    QImage showImage;
+    QImage showInImage;
     QImage resultImage;
+    QImage showResultImage;
     QImage saveImage;
 
 };

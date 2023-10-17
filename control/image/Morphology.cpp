@@ -15,6 +15,6 @@ void Morphology::binaryImage(ImageModel *imageModel) {
 
     cv::threshold(srcMat, resultMat, 125, 255, cv::THRESH_BINARY_INV);
 
-    imageModel->resultImage = ImageFormatConverter::MatToQImage(resultMat);
+    imageModel->setResultImage(ImageFormatConverter::MatToQImage(resultMat));
 
 }

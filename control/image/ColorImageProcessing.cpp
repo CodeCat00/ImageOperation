@@ -13,6 +13,5 @@ void ColorImageProcessing::grayscaleProcessing(ImageModel *imageModel) {
 
     cv::cvtColor(srcMat, resultMat, cv::COLOR_BGR2GRAY);
 
-    imageModel->resultImage = ImageFormatConverter::MatToQImage(resultMat);
-
+    imageModel->setResultImage(ImageFormatConverter::MatToQImage(resultMat));
 }

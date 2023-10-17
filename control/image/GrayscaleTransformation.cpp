@@ -17,6 +17,6 @@ void GrayscaleTransformation::imageInversion(ImageModel *imageModel) {
 
     cv::Mat resultMat = 255 - srcMat;
 
-    imageModel->resultImage = ImageFormatConverter::MatToQImage(resultMat);
+    imageModel->setResultImage(ImageFormatConverter::MatToQImage(resultMat));
 
 }

@@ -17,5 +17,5 @@ void ImageSegmentation::outlierDetection(ImageModel *imageModel) {
     // 卷积
     filter2D(srcMat, resultMat, -1, Laplacian_kernel);
 
-    imageModel->resultImage = ImageFormatConverter::MatToQImage(resultMat);
+    imageModel->setResultImage(ImageFormatConverter::MatToQImage(resultMat));
 }

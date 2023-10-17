@@ -54,7 +54,7 @@ void MainWindow::open() {
         return;
     }
 
-    mainUi.openImageFileLabel->setPixmap(imageModel.getShowImage());
+    mainUi.openImageFileLabel->setPixmap(imageModel.getShowInImage());
 }
 
 void MainWindow::save() {
@@ -71,7 +71,7 @@ void MainWindow::setOpenFilePath() {
 
     if (!filePathRecord.currentFileName.isEmpty()) {
         imageModel.readImage(filePathRecord.currentFileName);
-        mainUi.openImageFileLabel->setPixmap(imageModel.getShowImage());
+        mainUi.openImageFileLabel->setPixmap(imageModel.getShowInImage());
 
         std::cout << filePathRecord.currentFileName.toStdString() << std::endl;
     }
@@ -91,7 +91,7 @@ void MainWindow::preImage() {
 
     imageModel.readImage(fileName);
 
-    mainUi.openImageFileLabel->setPixmap(imageModel.getShowImage());
+    mainUi.openImageFileLabel->setPixmap(imageModel.getShowInImage());
 }
 
 void MainWindow::nextImage() {
@@ -102,27 +102,27 @@ void MainWindow::nextImage() {
 
     imageModel.readImage(fileName);
 
-    mainUi.openImageFileLabel->setPixmap(imageModel.getShowImage());
+    mainUi.openImageFileLabel->setPixmap(imageModel.getShowInImage());
 }
 
 void MainWindow::wheelEvent(QWheelEvent *event) {
     if (QApplication::keyboardModifiers() == Qt::ControlModifier) {
         if (mainUi.openImageFileLabel->underMouse()) {
             if (event->delta() > 0) {
-                ImageProcess::getBiggerImage(&imageModel.inImage, &imageModel.showImage);
+                ImageProcess::getBiggerImage(&imageModel.inImage, &imageModel.showInImage);
             } else {
-                ImageProcess::getSmallerShowImage(&imageModel.inImage, &imageModel.showImage);
+                ImageProcess::getSmallerShowImage(&imageModel.inImage, &imageModel.showInImage);
             }
-            mainUi.openImageFileLabel->setPixmap(imageModel.getShowImage());
+            mainUi.openImageFileLabel->setPixmap(imageModel.getShowInImage());
         }
 
         if (mainUi.tabLabel1->underMouse()) {
             if (event->delta() > 0) {
-                ImageProcess::getBiggerImage(&imageModel.inImage, &imageModel.showImage);
+                ImageProcess::getBiggerImage(&imageModel.resultImage, &imageModel.showResultImage);
             } else {
-                ImageProcess::getSmallerShowImage(&imageModel.inImage, &imageModel.showImage);
+                ImageProcess::getSmallerShowImage(&imageModel.resultImage, &imageModel.showResultImage);
             }
-            mainUi.openImageFileLabel->setPixmap(imageModel.getShowImage());
+            mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
         }
         event->accept();
     } else {
@@ -139,7 +139,7 @@ void MainWindow::imageInversionAct() {
         return;
     }
 
-    mainUi.tabLabel1->setPixmap(imageModel.getResultImage());
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
 }
 
 void MainWindow::outlierDetection() {
@@ -149,7 +149,7 @@ void MainWindow::outlierDetection() {
         return;
     }
 
-    mainUi.tabLabel1->setPixmap(imageModel.getResultImage());
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
 }
 
 void MainWindow::binaryImage() {
@@ -159,7 +159,7 @@ void MainWindow::binaryImage() {
         return;
     }
 
-    mainUi.tabLabel1->setPixmap(imageModel.getResultImage());
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
 }
 
 void MainWindow::grayscaleProcessing() {
@@ -169,5 +169,5 @@ void MainWindow::grayscaleProcessing() {
         return;
     }
 
-    mainUi.tabLabel1->setPixmap(imageModel.getResultImage());
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
 }
