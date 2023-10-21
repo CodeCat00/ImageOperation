@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[15];
-    char stringdata0[170];
+    QByteArrayData data[20];
+    char stringdata0[254];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,20 +38,27 @@ QT_MOC_LITERAL(2, 16, 0), // ""
 QT_MOC_LITERAL(3, 17, 4), // "save"
 QT_MOC_LITERAL(4, 22, 15), // "setOpenFilePath"
 QT_MOC_LITERAL(5, 38, 15), // "setSaveFilePath"
-QT_MOC_LITERAL(6, 54, 17), // "imageInversionAct"
-QT_MOC_LITERAL(7, 72, 16), // "outlierDetection"
-QT_MOC_LITERAL(8, 89, 11), // "binaryImage"
-QT_MOC_LITERAL(9, 101, 19), // "grayscaleProcessing"
-QT_MOC_LITERAL(10, 121, 8), // "preImage"
-QT_MOC_LITERAL(11, 130, 9), // "nextImage"
-QT_MOC_LITERAL(12, 140, 10), // "wheelEvent"
-QT_MOC_LITERAL(13, 151, 12), // "QWheelEvent*"
-QT_MOC_LITERAL(14, 164, 5) // "event"
+QT_MOC_LITERAL(6, 54, 11), // "binaryImage"
+QT_MOC_LITERAL(7, 66, 11), // "logarithmic"
+QT_MOC_LITERAL(8, 78, 5), // "gamma"
+QT_MOC_LITERAL(9, 84, 21), // "histogramEqualization"
+QT_MOC_LITERAL(10, 106, 19), // "smoothSpatialFilter"
+QT_MOC_LITERAL(11, 126, 23), // "sharpeningSpatialFilter"
+QT_MOC_LITERAL(12, 150, 17), // "imageInversionAct"
+QT_MOC_LITERAL(13, 168, 16), // "outlierDetection"
+QT_MOC_LITERAL(14, 185, 19), // "grayscaleProcessing"
+QT_MOC_LITERAL(15, 205, 8), // "preImage"
+QT_MOC_LITERAL(16, 214, 9), // "nextImage"
+QT_MOC_LITERAL(17, 224, 10), // "wheelEvent"
+QT_MOC_LITERAL(18, 235, 12), // "QWheelEvent*"
+QT_MOC_LITERAL(19, 248, 5) // "event"
 
     },
     "MainWindow\0open\0\0save\0setOpenFilePath\0"
-    "setSaveFilePath\0imageInversionAct\0"
-    "outlierDetection\0binaryImage\0"
+    "setSaveFilePath\0binaryImage\0logarithmic\0"
+    "gamma\0histogramEqualization\0"
+    "smoothSpatialFilter\0sharpeningSpatialFilter\0"
+    "imageInversionAct\0outlierDetection\0"
     "grayscaleProcessing\0preImage\0nextImage\0"
     "wheelEvent\0QWheelEvent*\0event"
 };
@@ -63,7 +70,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      16,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -71,17 +78,22 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   69,    2, 0x08 /* Private */,
-       3,    0,   70,    2, 0x08 /* Private */,
-       4,    0,   71,    2, 0x08 /* Private */,
-       5,    0,   72,    2, 0x08 /* Private */,
-       6,    0,   73,    2, 0x08 /* Private */,
-       7,    0,   74,    2, 0x08 /* Private */,
-       8,    0,   75,    2, 0x08 /* Private */,
-       9,    0,   76,    2, 0x08 /* Private */,
-      10,    0,   77,    2, 0x08 /* Private */,
-      11,    0,   78,    2, 0x08 /* Private */,
-      12,    1,   79,    2, 0x08 /* Private */,
+       1,    0,   94,    2, 0x08 /* Private */,
+       3,    0,   95,    2, 0x08 /* Private */,
+       4,    0,   96,    2, 0x08 /* Private */,
+       5,    0,   97,    2, 0x08 /* Private */,
+       6,    0,   98,    2, 0x08 /* Private */,
+       7,    0,   99,    2, 0x08 /* Private */,
+       8,    0,  100,    2, 0x08 /* Private */,
+       9,    0,  101,    2, 0x08 /* Private */,
+      10,    0,  102,    2, 0x08 /* Private */,
+      11,    0,  103,    2, 0x08 /* Private */,
+      12,    0,  104,    2, 0x08 /* Private */,
+      13,    0,  105,    2, 0x08 /* Private */,
+      14,    0,  106,    2, 0x08 /* Private */,
+      15,    0,  107,    2, 0x08 /* Private */,
+      16,    0,  108,    2, 0x08 /* Private */,
+      17,    1,  109,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -94,7 +106,12 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 13,   14,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 18,   19,
 
        0        // eod
 };
@@ -109,13 +126,18 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->save(); break;
         case 2: _t->setOpenFilePath(); break;
         case 3: _t->setSaveFilePath(); break;
-        case 4: _t->imageInversionAct(); break;
-        case 5: _t->outlierDetection(); break;
-        case 6: _t->binaryImage(); break;
-        case 7: _t->grayscaleProcessing(); break;
-        case 8: _t->preImage(); break;
-        case 9: _t->nextImage(); break;
-        case 10: _t->wheelEvent((*reinterpret_cast< QWheelEvent*(*)>(_a[1]))); break;
+        case 4: _t->binaryImage(); break;
+        case 5: _t->logarithmic(); break;
+        case 6: _t->gamma(); break;
+        case 7: _t->histogramEqualization(); break;
+        case 8: _t->smoothSpatialFilter(); break;
+        case 9: _t->sharpeningSpatialFilter(); break;
+        case 10: _t->imageInversionAct(); break;
+        case 11: _t->outlierDetection(); break;
+        case 12: _t->grayscaleProcessing(); break;
+        case 13: _t->preImage(); break;
+        case 14: _t->nextImage(); break;
+        case 15: _t->wheelEvent((*reinterpret_cast< QWheelEvent*(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -150,13 +172,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 16;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 16)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 11;
+        _id -= 16;
     }
     return _id;
 }

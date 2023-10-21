@@ -66,4 +66,3 @@ QImage ImageFormatConverter::MatToQImage(const cv::Mat &mat) {
         return {};
     }
 }
-

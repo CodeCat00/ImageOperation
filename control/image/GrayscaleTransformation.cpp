@@ -5,47 +5,7 @@
 #include <iostream>
 #include "GrayscaleTransformation.h"
 #include "../util/ImageFormatConverter.h"
-
-
-cv::Mat GrayscaleTransformation::detail(cv::Mat *pMat, double (*pFunction)(double)) {
-
-    cv::Mat result = pMat->clone();
-
-    for (int i = 0; i < pMat->rows; i++)
-    {
-        for (int j = 0; j < pMat->cols; j++)
-        {
-            for(int k = 0;k < 3;++k){
-                result.at<cv::Vec3b>(i, j)[k] = pFunction((double)(pMat->at<cv::Vec3b>(i, j)[k]));
-            }
-        }
-    }
-
-    normalize(result, result, 0, 255, cv::NORM_MINMAX);
-
-    return result;
-}
-
-cv::Mat GrayscaleTransformation::detailMultiChannel(cv::Mat *pMat, void (*pFunction)(cv::Mat &src, cv::Mat &dest)) {
-
-    cv::Mat ycrcb;
-    cv::Mat result;
-
-    cv::cvtColor( *pMat, ycrcb, cv::COLOR_BGR2YCrCb);
-
-    std::vector<cv::Mat> channels;
-    cv::split( ycrcb, channels );
-
-    pFunction(channels[0], channels[0] );
-    pFunction(channels[1], channels[1] );
-    pFunction(channels[2], channels[2] );
-
-    cv::merge( channels, ycrcb );
-
-    cv::cvtColor( ycrcb, result, cv::COLOR_YCrCb2BGR );
-
-    return result;
-}
+#include "../util/ImageMatDetailUtil.h"
 
 void GrayscaleTransformation::imageInversion(ImageModel *imageModel) {
 
@@ -61,7 +21,7 @@ void GrayscaleTransformation::logarithmic(ImageModel *imageModel) {
 
     cv::Mat srcMat = ImageFormatConverter::QImageToMat(imageModel->inImage);
 
-    cv::Mat resultMat = detail(&srcMat,[](double color){
+    cv::Mat resultMat = ImageMatDetailUtil::detail(&srcMat,[](double color){
         return 6 * log(color + 1);
     });
 
@@ -73,7 +33,7 @@ void GrayscaleTransformation::gamma(ImageModel *imageModel) {
 
     cv::Mat srcMat = ImageFormatConverter::QImageToMat(imageModel->inImage);
 
-    cv::Mat resultMat = detail(&srcMat,[](double color){
+    cv::Mat resultMat = ImageMatDetailUtil::detail(&srcMat,[](double color){
         return 6*pow(color,0.5);
     });
 
@@ -85,7 +45,7 @@ void GrayscaleTransformation::histogramEqualization(ImageModel *imageModel) {
 
     cv::Mat srcMat = ImageFormatConverter::QImageToMat(imageModel->inImage);
 
-    cv::Mat resultMat = detailMultiChannel(&srcMat,[](cv::Mat &src,cv::Mat &dst){
+    cv::Mat resultMat = ImageMatDetailUtil::detailMultiChannel(&srcMat,[](cv::Mat &src,cv::Mat &dst){
         cv::equalizeHist( src, dst );
     });
 
@@ -137,7 +97,7 @@ void GrayscaleTransformation::smoothSpatialFilter(ImageModel *imageModel) {
 void GrayscaleTransformation::sharpeningSpatialFilter(ImageModel *imageModel) {
     cv::Mat srcMat = ImageFormatConverter::QImageToMat(imageModel->inImage);
 
-    cv::Mat resultMat = detailMultiChannel(&srcMat,[](cv::Mat &src,cv::Mat &dst){
+    cv::Mat resultMat = ImageMatDetailUtil::detailMultiChannel(&srcMat,[](cv::Mat &src,cv::Mat &dst){
         cv::Mat result = src.clone();
 
         int la;

@@ -42,3 +42,5 @@ C:/Users/ASUS/CLionProjects/ImageOperation/control/image/WaveletAndMultiResoluti
 C:/Users/ASUS/CLionProjects/ImageOperation/control/image/ColorImageProcessing.cpp
 C:/Users/ASUS/CLionProjects/ImageOperation/control/image/Morphology.cpp
 C:/Users/ASUS/CLionProjects/ImageOperation/control/image/RestorationAndReconstruction.cpp
+C:/Users/ASUS/CLionProjects/ImageOperation/control/util/ImageMatDetailUtil.h
+C:/Users/ASUS/CLionProjects/ImageOperation/control/util/ImageMatDetailUtil.cpp

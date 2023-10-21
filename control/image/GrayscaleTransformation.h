@@ -24,11 +24,6 @@ public:
 
     static void sharpeningSpatialFilter(ImageModel *imageModel);
 
-public:
-
-    static cv::Mat detail(cv::Mat *pMat, double (*pFunction)(double));
-
-    static cv::Mat detailMultiChannel(cv::Mat *pMat, void (*pFunction)(cv::Mat &, cv::Mat &));
 };
 
 

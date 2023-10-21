@@ -58,6 +58,8 @@ add_executable(ImageOperation main.cpp
         control/image/RestorationAndReconstruction.h
         control/image/FrequencyDomainFiltering.cpp
         control/image/FrequencyDomainFiltering.h
+        control/util/ImageMatDetailUtil.cpp
+        control/util/ImageMatDetailUtil.h
 )
 
 target_link_libraries(ImageOperation ${OpenCV_LIBS})
