@@ -120,51 +120,39 @@
 			null
 		],
 		[
-			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/ColorImageProcessing.h",
-			"MU",
-			"3RHPYIGTL7/moc_ColorImageProcessing.cpp",
-			null
-		],
-		[
-			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/FrequencyDomainFiltering.h",
-			"MU",
-			"3RHPYIGTL7/moc_FrequencyDomainFiltering.cpp",
-			null
-		],
-		[
-			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/GrayscaleTransformation.h",
-			"MU",
-			"3RHPYIGTL7/moc_GrayscaleTransformation.cpp",
-			null
-		],
-		[
 			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/ImageProcess.h",
 			"MU",
 			"3RHPYIGTL7/moc_ImageProcess.cpp",
 			null
 		],
 		[
-			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/ImageSegmentation.h",
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/example/FrequencyDomainFiltering.h",
 			"MU",
-			"3RHPYIGTL7/moc_ImageSegmentation.cpp",
+			"YG45Y4ANS6/moc_FrequencyDomainFiltering.cpp",
 			null
 		],
 		[
-			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/Morphology.h",
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/example/GrayscaleTransformation.h",
 			"MU",
-			"3RHPYIGTL7/moc_Morphology.cpp",
+			"YG45Y4ANS6/moc_GrayscaleTransformation.cpp",
 			null
 		],
 		[
-			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/RestorationAndReconstruction.h",
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/example/ImageSegmentation.h",
 			"MU",
-			"3RHPYIGTL7/moc_RestorationAndReconstruction.cpp",
+			"YG45Y4ANS6/moc_ImageSegmentation.cpp",
 			null
 		],
 		[
-			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/WaveletAndMultiResolutionProcessing.h",
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/example/Morphology.h",
 			"MU",
-			"3RHPYIGTL7/moc_WaveletAndMultiResolutionProcessing.cpp",
+			"YG45Y4ANS6/moc_Morphology.cpp",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/example/RestorationAndReconstruction.h",
+			"MU",
+			"YG45Y4ANS6/moc_RestorationAndReconstruction.cpp",
 			null
 		],
 		[
@@ -183,6 +171,12 @@
 			"C:/Users/ASUS/CLionProjects/ImageOperation/control/util/ImageMatDetailUtil.h",
 			"MU",
 			"BDKBP5SVHL/moc_ImageMatDetailUtil.cpp",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/util/ImageOtherUtil.h",
+			"MU",
+			"BDKBP5SVHL/moc_ImageOtherUtil.cpp",
 			null
 		],
 		[
@@ -273,42 +267,32 @@
 			null
 		],
 		[
-			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/ColorImageProcessing.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/FrequencyDomainFiltering.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/GrayscaleTransformation.cpp",
-			"MU",
-			null
-		],
-		[
 			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/ImageProcess.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/ImageSegmentation.cpp",
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/example/FrequencyDomainFiltering.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/Morphology.cpp",
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/example/GrayscaleTransformation.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/RestorationAndReconstruction.cpp",
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/example/ImageSegmentation.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/WaveletAndMultiResolutionProcessing.cpp",
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/example/Morphology.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/image/example/RestorationAndReconstruction.cpp",
 			"MU",
 			null
 		],
@@ -324,6 +308,11 @@
 		],
 		[
 			"C:/Users/ASUS/CLionProjects/ImageOperation/control/util/ImageMatDetailUtil.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/util/ImageOtherUtil.cpp",
 			"MU",
 			null
 		],
