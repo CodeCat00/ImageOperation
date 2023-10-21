@@ -361,8 +361,8 @@ QTabBar::tab:!selected:hover
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>478</width>
-             <height>631</height>
+             <width>73</width>
+             <height>32</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -400,8 +400,8 @@ QTabBar::tab:!selected:hover
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>478</width>
-             <height>631</height>
+             <width>73</width>
+             <height>32</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -433,8 +433,8 @@ QTabBar::tab:!selected:hover
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>478</width>
-             <height>631</height>
+             <width>73</width>
+             <height>32</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -466,8 +466,8 @@ QTabBar::tab:!selected:hover
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>478</width>
-             <height>631</height>
+             <width>73</width>
+             <height>32</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -530,12 +530,14 @@ QTabBar::tab:!selected:hover
      <addaction name="medianBlurAct"/>
      <addaction name="sobelAct"/>
      <addaction name="laplacianAct"/>
+     <addaction name="meanFilterAct"/>
     </widget>
     <widget class="QMenu" name="restorationAndReconstruction">
      <property name="title">
       <string>复原与重建</string>
      </property>
      <addaction name="gaussianNoiseAct"/>
+     <addaction name="saltAndPepperNoiseAct"/>
     </widget>
     <widget class="QMenu" name="colorProcessing">
      <property name="title">
@@ -1019,6 +1021,26 @@ QTabBar::tab:!selected:hover
   <action name="laplacianAct">
    <property name="text">
     <string>拉普拉斯变换</string>
+   </property>
+  </action>
+  <action name="meanFilterAct">
+   <property name="text">
+    <string>均值滤波器</string>
+   </property>
+  </action>
+  <action name="statisticalSortingFilterAct">
+   <property name="text">
+    <string>统计排序滤波器 </string>
+   </property>
+  </action>
+  <action name="adaptiveFilterAct">
+   <property name="text">
+    <string>自适应滤波器</string>
+   </property>
+  </action>
+  <action name="saltAndPepperNoiseAct">
+   <property name="text">
+    <string>椒盐噪声</string>
    </property>
   </action>
  </widget>

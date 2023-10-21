@@ -68,6 +68,11 @@ private slots:
     void medianBlur();
     void sobel();
     void laplacian();
+    void meanFilter();
+
+    // 菜单栏 -> 操作 -> 噪声
+    void gaussianNoise();
+    void saltAndPepperNoise();
 
     void imageInversionAct();
     void outlierDetection();

@@ -57,3 +57,15 @@ void FrequencyDomainFiltering::laplacian(ImageModel *imageModel) {
     imageModel->setResultImage(ImageFormatConverter::MatToQImage(resultMat));
 
 }
+
+void FrequencyDomainFiltering::meanFilter(ImageModel *imageModel) {
+
+    cv::Mat srcMat = ImageFormatConverter::QImageToMat(imageModel->inImage);
+
+    cv::Mat resultMat = srcMat.clone();
+
+    cv::blur(srcMat, resultMat, cv::Size(7, 7));
+
+    imageModel->setResultImage(ImageFormatConverter::MatToQImage(resultMat));
+
+}

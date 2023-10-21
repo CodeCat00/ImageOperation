@@ -11,6 +11,7 @@
 #include "../../control/image/Morphology.h"
 #include "../../control/image/ColorImageProcessing.h"
 #include "../../control/image/FrequencyDomainFiltering.h"
+#include "../../control/image/RestorationAndReconstruction.h"
 
 /* ---------------------------------------- 初始化部分 --------------------------------------------------------------- */
 
@@ -43,6 +44,11 @@ void MainWindow::initSlot() {
     connect(mainUi.medianBlurAct, &QAction::triggered, this, &MainWindow::medianBlur);
     connect(mainUi.sobelAct, &QAction::triggered, this, &MainWindow::sobel);
     connect(mainUi.laplacianAct, &QAction::triggered, this, &MainWindow::laplacian);
+    connect(mainUi.meanFilterAct, &QAction::triggered, this, &MainWindow::meanFilter);
+
+    // 菜单栏 -> 编辑 -> 噪声
+    connect(mainUi.gaussianNoiseAct, &QAction::triggered, this, &MainWindow::gaussianNoise);
+    connect(mainUi.saltAndPepperNoiseAct, &QAction::triggered, this, &MainWindow::saltAndPepperNoise);
 
     connect(mainUi.outlierDetectionAct, &QAction::triggered, this, &MainWindow::outlierDetection);
     connect(mainUi.binaryImageAct, &QAction::triggered, this, &MainWindow::binaryImage);
@@ -277,3 +283,34 @@ void MainWindow::laplacian() {
 
     mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
 }
+
+void MainWindow::meanFilter() {
+    FrequencyDomainFiltering::meanFilter(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::gaussianNoise() {
+    RestorationAndReconstruction::gaussianNoise(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::saltAndPepperNoise() {
+    RestorationAndReconstruction::saltAndPepperNoise(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+

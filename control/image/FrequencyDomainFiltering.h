@@ -19,6 +19,8 @@ public:
 
     static void laplacian(ImageModel *imageModel);
 
+    static void meanFilter(ImageModel *imageModel);
+
 };
 
 

@@ -93,6 +93,10 @@ public:
     QAction *medianBlurAct;
     QAction *sobelAct;
     QAction *laplacianAct;
+    QAction *meanFilterAct;
+    QAction *statisticalSortingFilterAct;
+    QAction *adaptiveFilterAct;
+    QAction *saltAndPepperNoiseAct;
     QWidget *centralWidget;
     QHBoxLayout *horizontalLayout_5;
     QVBoxLayout *openImageVerticalLayout;
@@ -116,7 +120,25 @@ public:
     QScrollArea *tabScrollArea2;
     QWidget *tabInnerWidget2;
     QVBoxLayout *verticalLayout_2;
-    QLabel *stitchTextureLabel;
+    QLabel *tabLabel2;
+    QWidget *tabWidget3;
+    QHBoxLayout *horizontalLayout;
+    QScrollArea *scrollArea;
+    QWidget *tabInnerWidget3;
+    QVBoxLayout *verticalLayout_3;
+    QLabel *tabLabel3;
+    QWidget *tabWidget4;
+    QHBoxLayout *horizontalLayout_6;
+    QScrollArea *scrollArea_2;
+    QWidget *tabInnerWidget4;
+    QVBoxLayout *verticalLayout_4;
+    QLabel *tabLabel4;
+    QWidget *tabWidget5;
+    QHBoxLayout *horizontalLayout_7;
+    QScrollArea *scrollArea_3;
+    QWidget *tabInnerWidget5;
+    QVBoxLayout *verticalLayout_5;
+    QLabel *label_3;
     QMenuBar *menuBar;
     QMenu *fileMenu;
     QMenu *exampleMenu;
@@ -485,6 +507,14 @@ public:
         sobelAct->setObjectName(QString::fromUtf8("sobelAct"));
         laplacianAct = new QAction(MainUi);
         laplacianAct->setObjectName(QString::fromUtf8("laplacianAct"));
+        meanFilterAct = new QAction(MainUi);
+        meanFilterAct->setObjectName(QString::fromUtf8("meanFilterAct"));
+        statisticalSortingFilterAct = new QAction(MainUi);
+        statisticalSortingFilterAct->setObjectName(QString::fromUtf8("statisticalSortingFilterAct"));
+        adaptiveFilterAct = new QAction(MainUi);
+        adaptiveFilterAct->setObjectName(QString::fromUtf8("adaptiveFilterAct"));
+        saltAndPepperNoiseAct = new QAction(MainUi);
+        saltAndPepperNoiseAct->setObjectName(QString::fromUtf8("saltAndPepperNoiseAct"));
         centralWidget = new QWidget(MainUi);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         centralWidget->setEnabled(true);
@@ -597,17 +627,96 @@ public:
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        stitchTextureLabel = new QLabel(tabInnerWidget2);
-        stitchTextureLabel->setObjectName(QString::fromUtf8("stitchTextureLabel"));
-        stitchTextureLabel->setAlignment(Qt::AlignCenter);
+        tabLabel2 = new QLabel(tabInnerWidget2);
+        tabLabel2->setObjectName(QString::fromUtf8("tabLabel2"));
+        tabLabel2->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_2->addWidget(stitchTextureLabel);
+        verticalLayout_2->addWidget(tabLabel2);
 
         tabScrollArea2->setWidget(tabInnerWidget2);
 
         horizontalLayout_3->addWidget(tabScrollArea2);
 
         tabWidget->addTab(tabWidget2, QString());
+        tabWidget3 = new QWidget();
+        tabWidget3->setObjectName(QString::fromUtf8("tabWidget3"));
+        tabWidget3->setFocusPolicy(Qt::NoFocus);
+        horizontalLayout = new QHBoxLayout(tabWidget3);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        scrollArea = new QScrollArea(tabWidget3);
+        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
+        scrollArea->setWidgetResizable(true);
+        tabInnerWidget3 = new QWidget();
+        tabInnerWidget3->setObjectName(QString::fromUtf8("tabInnerWidget3"));
+        tabInnerWidget3->setGeometry(QRect(0, 0, 73, 32));
+        verticalLayout_3 = new QVBoxLayout(tabInnerWidget3);
+        verticalLayout_3->setSpacing(6);
+        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        tabLabel3 = new QLabel(tabInnerWidget3);
+        tabLabel3->setObjectName(QString::fromUtf8("tabLabel3"));
+
+        verticalLayout_3->addWidget(tabLabel3);
+
+        scrollArea->setWidget(tabInnerWidget3);
+
+        horizontalLayout->addWidget(scrollArea);
+
+        tabWidget->addTab(tabWidget3, QString());
+        tabWidget4 = new QWidget();
+        tabWidget4->setObjectName(QString::fromUtf8("tabWidget4"));
+        horizontalLayout_6 = new QHBoxLayout(tabWidget4);
+        horizontalLayout_6->setSpacing(6);
+        horizontalLayout_6->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        scrollArea_2 = new QScrollArea(tabWidget4);
+        scrollArea_2->setObjectName(QString::fromUtf8("scrollArea_2"));
+        scrollArea_2->setWidgetResizable(true);
+        tabInnerWidget4 = new QWidget();
+        tabInnerWidget4->setObjectName(QString::fromUtf8("tabInnerWidget4"));
+        tabInnerWidget4->setGeometry(QRect(0, 0, 73, 32));
+        verticalLayout_4 = new QVBoxLayout(tabInnerWidget4);
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        tabLabel4 = new QLabel(tabInnerWidget4);
+        tabLabel4->setObjectName(QString::fromUtf8("tabLabel4"));
+
+        verticalLayout_4->addWidget(tabLabel4);
+
+        scrollArea_2->setWidget(tabInnerWidget4);
+
+        horizontalLayout_6->addWidget(scrollArea_2);
+
+        tabWidget->addTab(tabWidget4, QString());
+        tabWidget5 = new QWidget();
+        tabWidget5->setObjectName(QString::fromUtf8("tabWidget5"));
+        horizontalLayout_7 = new QHBoxLayout(tabWidget5);
+        horizontalLayout_7->setSpacing(6);
+        horizontalLayout_7->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
+        scrollArea_3 = new QScrollArea(tabWidget5);
+        scrollArea_3->setObjectName(QString::fromUtf8("scrollArea_3"));
+        scrollArea_3->setWidgetResizable(true);
+        tabInnerWidget5 = new QWidget();
+        tabInnerWidget5->setObjectName(QString::fromUtf8("tabInnerWidget5"));
+        tabInnerWidget5->setGeometry(QRect(0, 0, 73, 32));
+        verticalLayout_5 = new QVBoxLayout(tabInnerWidget5);
+        verticalLayout_5->setSpacing(6);
+        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        label_3 = new QLabel(tabInnerWidget5);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        verticalLayout_5->addWidget(label_3);
+
+        scrollArea_3->setWidget(tabInnerWidget5);
+
+        horizontalLayout_7->addWidget(scrollArea_3);
+
+        tabWidget->addTab(tabWidget5, QString());
 
         horizontalLayout_5->addWidget(tabWidget);
 
@@ -668,7 +777,9 @@ public:
         frequencyDomainFiltering->addAction(medianBlurAct);
         frequencyDomainFiltering->addAction(sobelAct);
         frequencyDomainFiltering->addAction(laplacianAct);
+        frequencyDomainFiltering->addAction(meanFilterAct);
         restorationAndReconstruction->addAction(gaussianNoiseAct);
+        restorationAndReconstruction->addAction(saltAndPepperNoiseAct);
         colorProcessing->addAction(grayscaleProcessingAct);
         multiResolutionProcessing->addAction(imagePyramidAct);
         morphology->addAction(binaryImageAct);
@@ -769,13 +880,23 @@ public:
         medianBlurAct->setText(QCoreApplication::translate("MainUi", "\344\270\255\345\200\274\346\273\244\346\263\242", nullptr));
         sobelAct->setText(QCoreApplication::translate("MainUi", "\346\226\271\345\220\221\346\273\244\346\263\242", nullptr));
         laplacianAct->setText(QCoreApplication::translate("MainUi", "\346\213\211\346\231\256\346\213\211\346\226\257\345\217\230\346\215\242", nullptr));
+        meanFilterAct->setText(QCoreApplication::translate("MainUi", "\345\235\207\345\200\274\346\273\244\346\263\242\345\231\250", nullptr));
+        statisticalSortingFilterAct->setText(QCoreApplication::translate("MainUi", "\347\273\237\350\256\241\346\216\222\345\272\217\346\273\244\346\263\242\345\231\250 ", nullptr));
+        adaptiveFilterAct->setText(QCoreApplication::translate("MainUi", "\350\207\252\351\200\202\345\272\224\346\273\244\346\263\242\345\231\250", nullptr));
+        saltAndPepperNoiseAct->setText(QCoreApplication::translate("MainUi", "\346\244\222\347\233\220\345\231\252\345\243\260", nullptr));
         preImageButton->setText(QCoreApplication::translate("MainUi", "\344\270\212\344\270\200\345\274\240", nullptr));
         nextImageButton->setText(QCoreApplication::translate("MainUi", "\344\270\213\344\270\200\345\274\240", nullptr));
         openImageFileLabel->setText(QString());
         tabLabel1->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tabWidget1), QCoreApplication::translate("MainUi", "Tab1", nullptr));
-        stitchTextureLabel->setText(QString());
+        tabLabel2->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tabWidget2), QCoreApplication::translate("MainUi", "Tab2", nullptr));
+        tabLabel3->setText(QString());
+        tabWidget->setTabText(tabWidget->indexOf(tabWidget3), QCoreApplication::translate("MainUi", "Tab3", nullptr));
+        tabLabel4->setText(QString());
+        tabWidget->setTabText(tabWidget->indexOf(tabWidget4), QCoreApplication::translate("MainUi", "Tab4", nullptr));
+        label_3->setText(QString());
+        tabWidget->setTabText(tabWidget->indexOf(tabWidget5), QCoreApplication::translate("MainUi", "Tab5", nullptr));
         fileMenu->setTitle(QCoreApplication::translate("MainUi", "\346\226\207\344\273\266", nullptr));
         exampleMenu->setTitle(QCoreApplication::translate("MainUi", "\347\244\272\344\276\213", nullptr));
         grayscaleTransformation->setTitle(QCoreApplication::translate("MainUi", "\347\201\260\345\272\246\345\217\230\346\215\242", nullptr));

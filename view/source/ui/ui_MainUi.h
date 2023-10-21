@@ -93,6 +93,10 @@ public:
     QAction *medianBlurAct;
     QAction *sobelAct;
     QAction *laplacianAct;
+    QAction *meanFilterAct;
+    QAction *statisticalSortingFilterAct;
+    QAction *adaptiveFilterAct;
+    QAction *saltAndPepperNoiseAct;
     QWidget *centralWidget;
     QHBoxLayout *horizontalLayout_5;
     QVBoxLayout *openImageVerticalLayout;
@@ -503,6 +507,14 @@ public:
         sobelAct->setObjectName(QString::fromUtf8("sobelAct"));
         laplacianAct = new QAction(MainUi);
         laplacianAct->setObjectName(QString::fromUtf8("laplacianAct"));
+        meanFilterAct = new QAction(MainUi);
+        meanFilterAct->setObjectName(QString::fromUtf8("meanFilterAct"));
+        statisticalSortingFilterAct = new QAction(MainUi);
+        statisticalSortingFilterAct->setObjectName(QString::fromUtf8("statisticalSortingFilterAct"));
+        adaptiveFilterAct = new QAction(MainUi);
+        adaptiveFilterAct->setObjectName(QString::fromUtf8("adaptiveFilterAct"));
+        saltAndPepperNoiseAct = new QAction(MainUi);
+        saltAndPepperNoiseAct->setObjectName(QString::fromUtf8("saltAndPepperNoiseAct"));
         centralWidget = new QWidget(MainUi);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         centralWidget->setEnabled(true);
@@ -610,7 +622,7 @@ public:
         tabScrollArea2->setWidgetResizable(true);
         tabInnerWidget2 = new QWidget();
         tabInnerWidget2->setObjectName(QString::fromUtf8("tabInnerWidget2"));
-        tabInnerWidget2->setGeometry(QRect(0, 0, 478, 631));
+        tabInnerWidget2->setGeometry(QRect(0, 0, 73, 32));
         verticalLayout_2 = new QVBoxLayout(tabInnerWidget2);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -638,7 +650,7 @@ public:
         scrollArea->setWidgetResizable(true);
         tabInnerWidget3 = new QWidget();
         tabInnerWidget3->setObjectName(QString::fromUtf8("tabInnerWidget3"));
-        tabInnerWidget3->setGeometry(QRect(0, 0, 478, 631));
+        tabInnerWidget3->setGeometry(QRect(0, 0, 73, 32));
         verticalLayout_3 = new QVBoxLayout(tabInnerWidget3);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
@@ -664,7 +676,7 @@ public:
         scrollArea_2->setWidgetResizable(true);
         tabInnerWidget4 = new QWidget();
         tabInnerWidget4->setObjectName(QString::fromUtf8("tabInnerWidget4"));
-        tabInnerWidget4->setGeometry(QRect(0, 0, 478, 631));
+        tabInnerWidget4->setGeometry(QRect(0, 0, 73, 32));
         verticalLayout_4 = new QVBoxLayout(tabInnerWidget4);
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
@@ -690,7 +702,7 @@ public:
         scrollArea_3->setWidgetResizable(true);
         tabInnerWidget5 = new QWidget();
         tabInnerWidget5->setObjectName(QString::fromUtf8("tabInnerWidget5"));
-        tabInnerWidget5->setGeometry(QRect(0, 0, 478, 631));
+        tabInnerWidget5->setGeometry(QRect(0, 0, 73, 32));
         verticalLayout_5 = new QVBoxLayout(tabInnerWidget5);
         verticalLayout_5->setSpacing(6);
         verticalLayout_5->setContentsMargins(11, 11, 11, 11);
@@ -765,7 +777,9 @@ public:
         frequencyDomainFiltering->addAction(medianBlurAct);
         frequencyDomainFiltering->addAction(sobelAct);
         frequencyDomainFiltering->addAction(laplacianAct);
+        frequencyDomainFiltering->addAction(meanFilterAct);
         restorationAndReconstruction->addAction(gaussianNoiseAct);
+        restorationAndReconstruction->addAction(saltAndPepperNoiseAct);
         colorProcessing->addAction(grayscaleProcessingAct);
         multiResolutionProcessing->addAction(imagePyramidAct);
         morphology->addAction(binaryImageAct);
@@ -866,6 +880,10 @@ public:
         medianBlurAct->setText(QCoreApplication::translate("MainUi", "\344\270\255\345\200\274\346\273\244\346\263\242", nullptr));
         sobelAct->setText(QCoreApplication::translate("MainUi", "\346\226\271\345\220\221\346\273\244\346\263\242", nullptr));
         laplacianAct->setText(QCoreApplication::translate("MainUi", "\346\213\211\346\231\256\346\213\211\346\226\257\345\217\230\346\215\242", nullptr));
+        meanFilterAct->setText(QCoreApplication::translate("MainUi", "\345\235\207\345\200\274\346\273\244\346\263\242\345\231\250", nullptr));
+        statisticalSortingFilterAct->setText(QCoreApplication::translate("MainUi", "\347\273\237\350\256\241\346\216\222\345\272\217\346\273\244\346\263\242\345\231\250 ", nullptr));
+        adaptiveFilterAct->setText(QCoreApplication::translate("MainUi", "\350\207\252\351\200\202\345\272\224\346\273\244\346\263\242\345\231\250", nullptr));
+        saltAndPepperNoiseAct->setText(QCoreApplication::translate("MainUi", "\346\244\222\347\233\220\345\231\252\345\243\260", nullptr));
         preImageButton->setText(QCoreApplication::translate("MainUi", "\344\270\212\344\270\200\345\274\240", nullptr));
         nextImageButton->setText(QCoreApplication::translate("MainUi", "\344\270\213\344\270\200\345\274\240", nullptr));
         openImageFileLabel->setText(QString());
