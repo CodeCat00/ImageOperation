@@ -55,10 +55,16 @@ private slots:
 
     void setSaveFilePath();
 
-    // 菜单栏 -> 操作
+    // 菜单栏 -> 操作 -> 灰度变换
+    void binaryImage();
+    void logarithmic();
+    void gamma();
+    void histogramEqualization();
+    void smoothSpatialFilter();
+    void sharpeningSpatialFilter();
+
     void imageInversionAct();
     void outlierDetection();
-    void binaryImage();
     void grayscaleProcessing();
 
     // 菜单栏 -> 设置

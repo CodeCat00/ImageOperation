@@ -29,8 +29,15 @@ void MainWindow::initSlot() {
     connect(mainUi.setSaveFilePathAct, &QAction::triggered, this, &MainWindow::setSaveFilePath);
 
 
-    // 菜单栏 -> 操作
+    // 菜单栏 -> 编辑 -> 灰度变换
     connect(mainUi.imageInversionAct, &QAction::triggered, this, &MainWindow::imageInversionAct);
+    connect(mainUi.logarithmicAct, &QAction::triggered, this, &MainWindow::logarithmic);
+    connect(mainUi.gammaAct, &QAction::triggered, this, &MainWindow::gamma);
+    connect(mainUi.histogramEqualizationAct, &QAction::triggered, this, &MainWindow::histogramEqualization);
+    connect(mainUi.smoothSpatialFilterAct, &QAction::triggered, this, &MainWindow::smoothSpatialFilter);
+    connect(mainUi.sharpeningSpatialFilterAct, &QAction::triggered, this, &MainWindow::sharpeningSpatialFilter);
+
+
     connect(mainUi.outlierDetectionAct, &QAction::triggered, this, &MainWindow::outlierDetection);
     connect(mainUi.binaryImageAct, &QAction::triggered, this, &MainWindow::binaryImage);
     connect(mainUi.grayscaleProcessingAct, &QAction::triggered, this, &MainWindow::grayscaleProcessing);
@@ -132,16 +139,6 @@ void MainWindow::wheelEvent(QWheelEvent *event) {
 
 /* ----------------------------------- 图像示例程序 ------------------------------------------------------------------- */
 
-void MainWindow::imageInversionAct() {
-    GrayscaleTransformation::imageInversion(&imageModel);
-    if(imageModel.resultImage.isNull()){
-        std::cout << "result is null" << std::endl;
-        return;
-    }
-
-    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
-}
-
 void MainWindow::outlierDetection() {
     ImageSegmentation::outlierDetection(&imageModel);
     if(imageModel.resultImage.isNull()){
@@ -164,6 +161,69 @@ void MainWindow::binaryImage() {
 
 void MainWindow::grayscaleProcessing() {
     ColorImageProcessing::grayscaleProcessing(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+
+/* ---------------------------------------------------------------------------- */
+
+void MainWindow::imageInversionAct() {
+    GrayscaleTransformation::imageInversion(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::logarithmic() {
+    GrayscaleTransformation::logarithmic(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::gamma() {
+    GrayscaleTransformation::gamma(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::histogramEqualization() {
+    GrayscaleTransformation::histogramEqualization(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::smoothSpatialFilter() {
+    GrayscaleTransformation::smoothSpatialFilter(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::sharpeningSpatialFilter() {
+    GrayscaleTransformation::sharpeningSpatialFilter(&imageModel);
     if(imageModel.resultImage.isNull()){
         std::cout << "result is null" << std::endl;
         return;

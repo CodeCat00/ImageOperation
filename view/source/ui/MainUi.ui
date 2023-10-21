@@ -414,12 +414,20 @@ QTabBar::tab:!selected:hover
       <string>灰度变换</string>
      </property>
      <addaction name="imageInversionAct"/>
+     <addaction name="logarithmicAct"/>
+     <addaction name="gammaAct"/>
+     <addaction name="histogramEqualizationAct"/>
+     <addaction name="smoothSpatialFilterAct"/>
+     <addaction name="sharpeningSpatialFilterAct"/>
     </widget>
     <widget class="QMenu" name="frequencyDomainFiltering">
      <property name="title">
       <string>频率域滤波</string>
      </property>
-     <addaction name="fourierTransformSpectrogramAct"/>
+     <addaction name="GaussianBlurAct"/>
+     <addaction name="medianBlurAct"/>
+     <addaction name="sobelAct"/>
+     <addaction name="laplacianAct"/>
     </widget>
     <widget class="QMenu" name="restorationAndReconstruction">
      <property name="title">
@@ -836,9 +844,9 @@ QTabBar::tab:!selected:hover
     <string>图像反转</string>
    </property>
   </action>
-  <action name="fourierTransformSpectrogramAct">
+  <action name="GaussianBlurAct">
    <property name="text">
-    <string>傅里叶变换频谱图</string>
+    <string>低通滤波</string>
    </property>
   </action>
   <action name="gaussianNoiseAct">
@@ -869,6 +877,46 @@ QTabBar::tab:!selected:hover
   <action name="action1">
    <property name="text">
     <string>空</string>
+   </property>
+  </action>
+  <action name="logarithmicAct">
+   <property name="text">
+    <string>对数变换</string>
+   </property>
+  </action>
+  <action name="gammaAct">
+   <property name="text">
+    <string>伽马变换 </string>
+   </property>
+  </action>
+  <action name="histogramEqualizationAct">
+   <property name="text">
+    <string>直方图均衡化</string>
+   </property>
+  </action>
+  <action name="smoothSpatialFilterAct">
+   <property name="text">
+    <string>平滑空间滤波器</string>
+   </property>
+  </action>
+  <action name="sharpeningSpatialFilterAct">
+   <property name="text">
+    <string>锐化空间滤波器</string>
+   </property>
+  </action>
+  <action name="medianBlurAct">
+   <property name="text">
+    <string>中值滤波</string>
+   </property>
+  </action>
+  <action name="sobelAct">
+   <property name="text">
+    <string>方向滤波</string>
+   </property>
+  </action>
+  <action name="laplacianAct">
+   <property name="text">
+    <string>拉普拉斯变换</string>
    </property>
   </action>
  </widget>
