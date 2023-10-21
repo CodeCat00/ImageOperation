@@ -78,7 +78,7 @@ public:
     QAction *gray;
     QAction *actiongray;
     QAction *imageInversionAct;
-    QAction *GaussianBlurAct;
+    QAction *gaussianBlurAct;
     QAction *gaussianNoiseAct;
     QAction *grayscaleProcessingAct;
     QAction *imagePyramidAct;
@@ -455,8 +455,8 @@ public:
         actiongray->setObjectName(QString::fromUtf8("actiongray"));
         imageInversionAct = new QAction(MainUi);
         imageInversionAct->setObjectName(QString::fromUtf8("imageInversionAct"));
-        GaussianBlurAct = new QAction(MainUi);
-        GaussianBlurAct->setObjectName(QString::fromUtf8("GaussianBlurAct"));
+        gaussianBlurAct = new QAction(MainUi);
+        gaussianBlurAct->setObjectName(QString::fromUtf8("gaussianBlurAct"));
         gaussianNoiseAct = new QAction(MainUi);
         gaussianNoiseAct->setObjectName(QString::fromUtf8("gaussianNoiseAct"));
         grayscaleProcessingAct = new QAction(MainUi);
@@ -664,7 +664,7 @@ public:
         grayscaleTransformation->addAction(histogramEqualizationAct);
         grayscaleTransformation->addAction(smoothSpatialFilterAct);
         grayscaleTransformation->addAction(sharpeningSpatialFilterAct);
-        frequencyDomainFiltering->addAction(GaussianBlurAct);
+        frequencyDomainFiltering->addAction(gaussianBlurAct);
         frequencyDomainFiltering->addAction(medianBlurAct);
         frequencyDomainFiltering->addAction(sobelAct);
         frequencyDomainFiltering->addAction(laplacianAct);
@@ -754,7 +754,7 @@ public:
         gray->setText(QCoreApplication::translate("MainUi", "huidu", nullptr));
         actiongray->setText(QCoreApplication::translate("MainUi", "gray", nullptr));
         imageInversionAct->setText(QCoreApplication::translate("MainUi", "\345\233\276\345\203\217\345\217\215\350\275\254", nullptr));
-        GaussianBlurAct->setText(QCoreApplication::translate("MainUi", "\344\275\216\351\200\232\346\273\244\346\263\242", nullptr));
+        gaussianBlurAct->setText(QCoreApplication::translate("MainUi", "\344\275\216\351\200\232\346\273\244\346\263\242", nullptr));
         gaussianNoiseAct->setText(QCoreApplication::translate("MainUi", "\351\253\230\346\226\257\345\231\252\345\243\260", nullptr));
         grayscaleProcessingAct->setText(QCoreApplication::translate("MainUi", "\347\201\260\345\272\246\345\244\204\347\220\206 ", nullptr));
         imagePyramidAct->setText(QCoreApplication::translate("MainUi", "\345\233\276\345\203\217\351\207\221\345\255\227\345\241\224", nullptr));
