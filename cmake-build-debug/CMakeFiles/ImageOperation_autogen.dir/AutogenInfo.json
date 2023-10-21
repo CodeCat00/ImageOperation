@@ -180,6 +180,12 @@
 			null
 		],
 		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/util/ImageMatDetailUtil.h",
+			"MU",
+			"BDKBP5SVHL/moc_ImageMatDetailUtil.cpp",
+			null
+		],
+		[
 			"C:/Users/ASUS/CLionProjects/ImageOperation/model/ImageModel.h",
 			"MU",
 			"NLOY5YBGEN/moc_ImageModel.cpp",
@@ -313,6 +319,11 @@
 		],
 		[
 			"C:/Users/ASUS/CLionProjects/ImageOperation/control/util/ImageFormatConverter.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/ASUS/CLionProjects/ImageOperation/control/util/ImageMatDetailUtil.cpp",
 			"MU",
 			null
 		],

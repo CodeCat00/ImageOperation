@@ -11,7 +11,7 @@
 class FrequencyDomainFiltering {
 
 public:
-    static void GaussianBlur(ImageModel *imageModel);
+    static void gaussianBlur(ImageModel *imageModel);
 
     static void medianBlur(ImageModel *imageModel);
 

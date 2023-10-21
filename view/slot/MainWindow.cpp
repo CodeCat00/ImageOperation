@@ -10,6 +10,7 @@
 #include "../../control/image/ImageSegmentation.h"
 #include "../../control/image/Morphology.h"
 #include "../../control/image/ColorImageProcessing.h"
+#include "../../control/image/FrequencyDomainFiltering.h"
 
 /* ---------------------------------------- 初始化部分 --------------------------------------------------------------- */
 
@@ -37,6 +38,11 @@ void MainWindow::initSlot() {
     connect(mainUi.smoothSpatialFilterAct, &QAction::triggered, this, &MainWindow::smoothSpatialFilter);
     connect(mainUi.sharpeningSpatialFilterAct, &QAction::triggered, this, &MainWindow::sharpeningSpatialFilter);
 
+    // 菜单栏 -> 编辑 -> 滤波处理
+    connect(mainUi.gaussianBlurAct, &QAction::triggered, this, &MainWindow::gaussianBlur);
+    connect(mainUi.medianBlurAct, &QAction::triggered, this, &MainWindow::medianBlur);
+    connect(mainUi.sobelAct, &QAction::triggered, this, &MainWindow::sobel);
+    connect(mainUi.laplacianAct, &QAction::triggered, this, &MainWindow::laplacian);
 
     connect(mainUi.outlierDetectionAct, &QAction::triggered, this, &MainWindow::outlierDetection);
     connect(mainUi.binaryImageAct, &QAction::triggered, this, &MainWindow::binaryImage);
@@ -224,6 +230,46 @@ void MainWindow::smoothSpatialFilter() {
 
 void MainWindow::sharpeningSpatialFilter() {
     GrayscaleTransformation::sharpeningSpatialFilter(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::gaussianBlur() {
+    FrequencyDomainFiltering::gaussianBlur(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::medianBlur() {
+    FrequencyDomainFiltering::medianBlur(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::sobel() {
+    FrequencyDomainFiltering::sobel(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::laplacian() {
+    FrequencyDomainFiltering::laplacian(&imageModel);
     if(imageModel.resultImage.isNull()){
         std::cout << "result is null" << std::endl;
         return;

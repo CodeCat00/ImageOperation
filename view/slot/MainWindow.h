@@ -63,6 +63,12 @@ private slots:
     void smoothSpatialFilter();
     void sharpeningSpatialFilter();
 
+    // 菜单栏 -> 操作 -> 滤波变换
+    void gaussianBlur();
+    void medianBlur();
+    void sobel();
+    void laplacian();
+
     void imageInversionAct();
     void outlierDetection();
     void grayscaleProcessing();
