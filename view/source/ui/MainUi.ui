@@ -511,10 +511,11 @@ QTabBar::tab:!selected:hover
     <property name="title">
      <string>示例</string>
     </property>
-    <widget class="QMenu" name="grayscaleTransformation">
+    <widget class="QMenu" name="color">
      <property name="title">
-      <string>灰度变换</string>
+      <string>色彩</string>
      </property>
+     <addaction name="grayProcessingAct"/>
      <addaction name="imageInversionAct"/>
      <addaction name="logarithmicAct"/>
      <addaction name="gammaAct"/>
@@ -522,9 +523,9 @@ QTabBar::tab:!selected:hover
      <addaction name="smoothSpatialFilterAct"/>
      <addaction name="sharpeningSpatialFilterAct"/>
     </widget>
-    <widget class="QMenu" name="frequencyDomainFiltering">
+    <widget class="QMenu" name="blur">
      <property name="title">
-      <string>频率域滤波</string>
+      <string>滤波器</string>
      </property>
      <addaction name="gaussianBlurAct"/>
      <addaction name="medianBlurAct"/>
@@ -532,44 +533,39 @@ QTabBar::tab:!selected:hover
      <addaction name="laplacianAct"/>
      <addaction name="meanFilterAct"/>
     </widget>
-    <widget class="QMenu" name="restorationAndReconstruction">
+    <widget class="QMenu" name="noise">
      <property name="title">
-      <string>复原与重建</string>
+      <string>噪声</string>
      </property>
      <addaction name="gaussianNoiseAct"/>
      <addaction name="saltAndPepperNoiseAct"/>
-    </widget>
-    <widget class="QMenu" name="colorProcessing">
-     <property name="title">
-      <string>彩色处理</string>
-     </property>
-     <addaction name="grayscaleProcessingAct"/>
-    </widget>
-    <widget class="QMenu" name="multiResolutionProcessing">
-     <property name="title">
-      <string>小波和多分辨率处理</string>
-     </property>
-     <addaction name="imagePyramidAct"/>
     </widget>
     <widget class="QMenu" name="morphology">
      <property name="title">
       <string>形态学</string>
      </property>
      <addaction name="binaryImageAct"/>
+     <addaction name="corrosionAct"/>
+     <addaction name="expansionAct"/>
+     <addaction name="openOperationAct"/>
+     <addaction name="closedOperationAct"/>
+     <addaction name="boundaryExtractionAct"/>
+     <addaction name="holeFillingAct"/>
     </widget>
-    <widget class="QMenu" name="imageSegmentation">
+    <widget class="QMenu" name="segmentation">
      <property name="title">
-      <string>图像分割</string>
+      <string>分割</string>
      </property>
      <addaction name="outlierDetectionAct"/>
+     <addaction name="edgeDetectionAct"/>
+     <addaction name="adaptiveThresholdAct"/>
+     <addaction name="watershedAct"/>
     </widget>
-    <addaction name="grayscaleTransformation"/>
-    <addaction name="frequencyDomainFiltering"/>
-    <addaction name="restorationAndReconstruction"/>
-    <addaction name="colorProcessing"/>
-    <addaction name="multiResolutionProcessing"/>
+    <addaction name="color"/>
+    <addaction name="blur"/>
+    <addaction name="noise"/>
     <addaction name="morphology"/>
-    <addaction name="imageSegmentation"/>
+    <addaction name="segmentation"/>
    </widget>
    <widget class="QMenu" name="menu">
     <property name="title">
@@ -958,9 +954,9 @@ QTabBar::tab:!selected:hover
     <string>高斯噪声</string>
    </property>
   </action>
-  <action name="grayscaleProcessingAct">
+  <action name="imageSegmentationAct">
    <property name="text">
-    <string>灰度处理 </string>
+    <string>图像分割</string>
    </property>
   </action>
   <action name="imagePyramidAct">
@@ -1041,6 +1037,56 @@ QTabBar::tab:!selected:hover
   <action name="saltAndPepperNoiseAct">
    <property name="text">
     <string>椒盐噪声</string>
+   </property>
+  </action>
+  <action name="grayProcessingAct">
+   <property name="text">
+    <string>灰度处理</string>
+   </property>
+  </action>
+  <action name="corrosionAct">
+   <property name="text">
+    <string>腐蚀</string>
+   </property>
+  </action>
+  <action name="expansionAct">
+   <property name="text">
+    <string>膨胀 </string>
+   </property>
+  </action>
+  <action name="openOperationAct">
+   <property name="text">
+    <string>开操作</string>
+   </property>
+  </action>
+  <action name="closedOperationAct">
+   <property name="text">
+    <string>闭操作</string>
+   </property>
+  </action>
+  <action name="boundaryExtractionAct">
+   <property name="text">
+    <string>边界提取</string>
+   </property>
+  </action>
+  <action name="holeFillingAct">
+   <property name="text">
+    <string>空洞填充</string>
+   </property>
+  </action>
+  <action name="edgeDetectionAct">
+   <property name="text">
+    <string>边缘检测</string>
+   </property>
+  </action>
+  <action name="adaptiveThresholdAct">
+   <property name="text">
+    <string>自适应阈值</string>
+   </property>
+  </action>
+  <action name="watershedAct">
+   <property name="text">
+    <string>分水岭</string>
    </property>
   </action>
  </widget>

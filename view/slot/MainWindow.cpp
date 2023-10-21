@@ -6,12 +6,11 @@
 #include "MainWindow.h"
 
 #include "../../control/image/ImageProcess.h"
-#include "../../control/image/GrayscaleTransformation.h"
-#include "../../control/image/ImageSegmentation.h"
-#include "../../control/image/Morphology.h"
-#include "../../control/image/ColorImageProcessing.h"
-#include "../../control/image/FrequencyDomainFiltering.h"
-#include "../../control/image/RestorationAndReconstruction.h"
+#include "../../control/image/example/GrayscaleTransformation.h"
+#include "../../control/image/example/ImageSegmentation.h"
+#include "../../control/image/example/Morphology.h"
+#include "../../control/image/example/FrequencyDomainFiltering.h"
+#include "../../control/image/example/RestorationAndReconstruction.h"
 
 /* ---------------------------------------- 初始化部分 --------------------------------------------------------------- */
 
@@ -32,7 +31,8 @@ void MainWindow::initSlot() {
 
 
     // 菜单栏 -> 编辑 -> 灰度变换
-    connect(mainUi.imageInversionAct, &QAction::triggered, this, &MainWindow::imageInversionAct);
+    connect(mainUi.grayProcessingAct, &QAction::triggered, this, &MainWindow::grayProcessing);
+    connect(mainUi.imageInversionAct, &QAction::triggered, this, &MainWindow::imageInversion);
     connect(mainUi.logarithmicAct, &QAction::triggered, this, &MainWindow::logarithmic);
     connect(mainUi.gammaAct, &QAction::triggered, this, &MainWindow::gamma);
     connect(mainUi.histogramEqualizationAct, &QAction::triggered, this, &MainWindow::histogramEqualization);
@@ -50,9 +50,20 @@ void MainWindow::initSlot() {
     connect(mainUi.gaussianNoiseAct, &QAction::triggered, this, &MainWindow::gaussianNoise);
     connect(mainUi.saltAndPepperNoiseAct, &QAction::triggered, this, &MainWindow::saltAndPepperNoise);
 
-    connect(mainUi.outlierDetectionAct, &QAction::triggered, this, &MainWindow::outlierDetection);
+    // 菜单栏 -> 编辑 -> 形态学
     connect(mainUi.binaryImageAct, &QAction::triggered, this, &MainWindow::binaryImage);
-    connect(mainUi.grayscaleProcessingAct, &QAction::triggered, this, &MainWindow::grayscaleProcessing);
+    connect(mainUi.corrosionAct, &QAction::triggered, this, &MainWindow::corrosion);
+    connect(mainUi.expansionAct, &QAction::triggered, this, &MainWindow::expansion);
+    connect(mainUi.openOperationAct, &QAction::triggered, this, &MainWindow::openOperation);
+    connect(mainUi.closedOperationAct, &QAction::triggered, this, &MainWindow::closedOperation);
+    connect(mainUi.boundaryExtractionAct, &QAction::triggered, this, &MainWindow::boundaryExtraction);
+    connect(mainUi.holeFillingAct, &QAction::triggered, this, &MainWindow::holeFilling);
+
+    // 菜单栏 -> 编辑 -> 图像分割
+    connect(mainUi.outlierDetectionAct, &QAction::triggered, this, &MainWindow::outlierDetection);
+    connect(mainUi.edgeDetectionAct, &QAction::triggered, this, &MainWindow::edgeDetection);
+    connect(mainUi.adaptiveThresholdAct, &QAction::triggered, this, &MainWindow::adaptiveThreshold);
+    connect(mainUi.watershedAct, &QAction::triggered, this, &MainWindow::watershed);
 
     // 菜单栏 -> 设置
 
@@ -151,8 +162,8 @@ void MainWindow::wheelEvent(QWheelEvent *event) {
 
 /* ----------------------------------- 图像示例程序 ------------------------------------------------------------------- */
 
-void MainWindow::outlierDetection() {
-    ImageSegmentation::outlierDetection(&imageModel);
+void MainWindow::grayProcessing() {
+    GrayscaleTransformation::grayProcessing(&imageModel);
     if(imageModel.resultImage.isNull()){
         std::cout << "result is null" << std::endl;
         return;
@@ -161,30 +172,7 @@ void MainWindow::outlierDetection() {
     mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
 }
 
-void MainWindow::binaryImage() {
-    Morphology::binaryImage(&imageModel);
-    if(imageModel.resultImage.isNull()){
-        std::cout << "result is null" << std::endl;
-        return;
-    }
-
-    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
-}
-
-void MainWindow::grayscaleProcessing() {
-    ColorImageProcessing::grayscaleProcessing(&imageModel);
-    if(imageModel.resultImage.isNull()){
-        std::cout << "result is null" << std::endl;
-        return;
-    }
-
-    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
-}
-
-
-/* ---------------------------------------------------------------------------- */
-
-void MainWindow::imageInversionAct() {
+void MainWindow::imageInversion() {
     GrayscaleTransformation::imageInversion(&imageModel);
     if(imageModel.resultImage.isNull()){
         std::cout << "result is null" << std::endl;
@@ -314,3 +302,112 @@ void MainWindow::saltAndPepperNoise() {
     mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
 }
 
+void MainWindow::binaryImage() {
+    Morphology::binaryImage(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::corrosion() {
+    Morphology::corrosion(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::expansion() {
+    Morphology::expansion(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::openOperation() {
+    Morphology::openOperation(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::closedOperation() {
+    Morphology::closedOperation(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::boundaryExtraction() {
+    Morphology::boundaryExtraction(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::holeFilling() {
+    Morphology::holeFilling(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::outlierDetection() {
+    ImageSegmentation::outlierDetection(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::edgeDetection() {
+    ImageSegmentation::edgeDetection(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::adaptiveThreshold() {
+    ImageSegmentation::adaptiveThreshold(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}
+
+void MainWindow::watershed() {
+    ImageSegmentation::watershed(&imageModel);
+    if(imageModel.resultImage.isNull()){
+        std::cout << "result is null" << std::endl;
+        return;
+    }
+
+    mainUi.tabLabel1->setPixmap(imageModel.getShowResultImage());
+}

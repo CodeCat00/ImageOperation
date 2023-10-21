@@ -48,15 +48,13 @@ private slots:
 
     // 菜单栏 -> 文件
     void open();
-
     void save();
-
     void setOpenFilePath();
-
     void setSaveFilePath();
 
     // 菜单栏 -> 操作 -> 灰度变换
-    void binaryImage();
+    void grayProcessing();
+    void imageInversion();
     void logarithmic();
     void gamma();
     void histogramEqualization();
@@ -74,19 +72,26 @@ private slots:
     void gaussianNoise();
     void saltAndPepperNoise();
 
-    void imageInversionAct();
+    // 菜单栏 -> 操作 -> 形态学
+    void binaryImage();
+    void corrosion();
+    void expansion();
+    void openOperation();
+    void closedOperation();
+    void boundaryExtraction();
+    void holeFilling();
+
+    // 菜单栏 -> 操作 -> 图像分割
     void outlierDetection();
-    void grayscaleProcessing();
+    void edgeDetection();
+    void adaptiveThreshold();
+    void watershed();
 
     // 菜单栏 -> 设置
 
     // 输入图片窗口
     void preImage();
-
     void nextImage();
-
-    // 纹理图片窗口
-
 
     // 滚轮
     void wheelEvent(QWheelEvent *event);
