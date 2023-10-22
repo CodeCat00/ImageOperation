@@ -29,7 +29,6 @@ void MainWindow::initSlot() {
     connect(mainUi.setOpenFilePathAct, &QAction::triggered, this, &MainWindow::setOpenFilePath);
     connect(mainUi.setSaveFilePathAct, &QAction::triggered, this, &MainWindow::setSaveFilePath);
 
-
     // 菜单栏 -> 编辑 -> 灰度变换
     connect(mainUi.grayProcessingAct, &QAction::triggered, this, &MainWindow::grayProcessing);
     connect(mainUi.imageInversionAct, &QAction::triggered, this, &MainWindow::imageInversion);

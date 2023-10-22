@@ -198,10 +198,6 @@ public:
 "       color:#E6FFFF;\n"
 "       }\n"
 "\n"
-"QToolBar {\n"
-"       min-height: 1px;\n"
-"       }\n"
-"\n"
 "QPushButton {\n"
 "       min-width:100px;\n"
 "       min-height:40px;\n"
@@ -210,9 +206,9 @@ public:
 "\n"
 "QScrollBar:horizontal {\n"
 "       border: 1px solid #222222;\n"
-"       background: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0.0 "
-                        "#ffffff, stop: 0.5 #ffffff, stop: 1 #ffffff);\n"
-"       height: 7px;\n"
+"       background: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0.0 #ffffff, stop: 0.5 #ffffff, stop: 1 #ffffff);\n"
+"       heig"
+                        "ht: 7px;\n"
 "       margin: 0px 16px 0 16px;\n"
 "       }\n"
 "QScrollBar::handle:horizontal {\n"
@@ -236,9 +232,9 @@ public:
 "       subcontrol-position: left;\n"
 "       subcontrol-origin: margin;\n"
 "       }\n"
-"QScrollBar::right-arr"
-                        "ow:horizontal, QScrollBar::left-arrow:horizontal {\n"
-"       border: 1px solid black;\n"
+"QScrollBar::right-arrow:horizontal, QScrollBar::left-arrow:horizontal {\n"
+"      "
+                        " border: 1px solid black;\n"
 "       width: 1px;\n"
 "       height: 1px;\n"
 "       background: white;\n"
@@ -262,9 +258,9 @@ public:
 "       border-radius: 20px;\n"
 "       background: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #999999, stop: 1 #999999);\n"
 "       height: 14px;\n"
-"       su"
-                        "bcontrol-position: bottom;\n"
-"       subcontrol-origin: margin;\n"
+"       subcontrol-position: bottom;\n"
+"       subcontrol-origin: marg"
+                        "in;\n"
 "       }\n"
 "QScrollBar::sub-line:vertical {\n"
 "       border: 1px solid #1b1b19;\n"
@@ -295,10 +291,10 @@ public:
 "       border-bottom-style: none;\n"
 "       background-color: #999999;\n"
 "       padding-left: 10px;\n"
-"       padding-right: 10px;"
-                        "\n"
+"       padding-right: 10px;\n"
 "       padding-top: 3px;\n"
-"       padding-bottom: 2px;\n"
+"       padding-bottom: 2px;"
+                        "\n"
 "       margin-right: -1px;\n"
 "       min-width: 80px;\n"
 "       min-height: 30px;\n"
@@ -326,8 +322,7 @@ public:
 "       border-top-right-radius: 3px;\n"
 "       background-color: QLinearGradient(x1:0, y1:0, x2:0, y2:1, stop:1 #212121, stop:0.4 #737373, stop:0.2 #999999, stop:0.1 #b1b1b1);\n"
 "       }\n"
-""
-                        "\n"
+"\n"
 "   "));
         openAct = new QAction(MainUi);
         openAct->setObjectName(QString::fromUtf8("openAct"));
@@ -538,6 +533,9 @@ public:
         openImageButtonHorizontalLayout->setObjectName(QString::fromUtf8("openImageButtonHorizontalLayout"));
         preImageButton = new QPushButton(centralWidget);
         preImageButton->setObjectName(QString::fromUtf8("preImageButton"));
+        preImageButton->setAutoRepeat(false);
+        preImageButton->setAutoDefault(false);
+        preImageButton->setFlat(false);
 
         openImageButtonHorizontalLayout->addWidget(preImageButton);
 
@@ -547,6 +545,7 @@ public:
 
         nextImageButton = new QPushButton(centralWidget);
         nextImageButton->setObjectName(QString::fromUtf8("nextImageButton"));
+        nextImageButton->setFlat(false);
 
         openImageButtonHorizontalLayout->addWidget(nextImageButton);
 
@@ -562,7 +561,7 @@ public:
         openImageFileScroll->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         openImageFileScrollWidget = new QWidget();
         openImageFileScrollWidget->setObjectName(QString::fromUtf8("openImageFileScrollWidget"));
-        openImageFileScrollWidget->setGeometry(QRect(0, 0, 496, 641));
+        openImageFileScrollWidget->setGeometry(QRect(0, 0, 496, 605));
         openImageFileScrollWidget->setLayoutDirection(Qt::LeftToRight);
         horizontalLayout_4 = new QHBoxLayout(openImageFileScrollWidget);
         horizontalLayout_4->setSpacing(6);
@@ -595,7 +594,7 @@ public:
         tabScrollArea1->setWidgetResizable(true);
         tabInnerWidget1 = new QWidget();
         tabInnerWidget1->setObjectName(QString::fromUtf8("tabInnerWidget1"));
-        tabInnerWidget1->setGeometry(QRect(0, 0, 478, 631));
+        tabInnerWidget1->setGeometry(QRect(0, 0, 478, 594));
         verticalLayout = new QVBoxLayout(tabInnerWidget1);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -723,7 +722,7 @@ public:
         MainUi->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainUi);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1024, 22));
+        menuBar->setGeometry(QRect(0, 0, 1024, 41));
         fileMenu = new QMenu(menuBar);
         fileMenu->setObjectName(QString::fromUtf8("fileMenu"));
         exampleMenu = new QMenu(menuBar);

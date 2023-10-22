@@ -199,6 +199,15 @@ QTabBar::tab:!selected:hover  {
           <property name="text">
            <string>上一张</string>
           </property>
+          <property name="autoRepeat">
+           <bool>false</bool>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
          </widget>
         </item>
         <item>
@@ -218,6 +227,9 @@ QTabBar::tab:!selected:hover  {
          <widget class="QPushButton" name="nextImageButton">
           <property name="text">
            <string>下一张</string>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
@@ -246,7 +258,7 @@ QTabBar::tab:!selected:hover  {
            <x>0</x>
            <y>0</y>
            <width>496</width>
-           <height>641</height>
+           <height>605</height>
           </rect>
          </property>
          <property name="layoutDirection">
@@ -293,7 +305,7 @@ QTabBar::tab:!selected:hover  {
              <x>0</x>
              <y>0</y>
              <width>478</width>
-             <height>631</height>
+             <height>594</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout">
@@ -461,7 +473,7 @@ QTabBar::tab:!selected:hover  {
      <x>0</x>
      <y>0</y>
      <width>1024</width>
-     <height>22</height>
+     <height>41</height>
     </rect>
    </property>
    <widget class="QMenu" name="fileMenu">
