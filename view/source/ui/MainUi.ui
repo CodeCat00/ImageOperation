@@ -26,10 +26,13 @@ QWidget {
        background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #708090,stop:1 #C8C8D0);
        }
 
+QMenuBar {
+       min-width: 80px;
+       min-height: 35px;
+       }
+
 QMenu {
        border-radius: 30px;
-       min-width: 100px;
-       min-height: 45px;
        }
 QMenu::item {
        min-width: 60px;
@@ -138,8 +141,8 @@ QTabBar::tab {
        padding-top: 3px;
        padding-bottom: 2px;
        margin-right: -1px;
-       min-width: 100px;
-       min-height: 35px;
+       min-width: 80px;
+       min-height: 30px;
        }
 QTabBar::tab:last {
        margin-right: 0;
